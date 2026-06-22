@@ -1,0 +1,24 @@
+{
+  "name": "inboxios",
+  "version": "1.0.0",
+  "description": "> Capture now, Sync Later\r A lightweight offline-first capture tool that syncs notes to Notion.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "Ozenf",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "axios": "^1.18.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "morgan": "^1.11.0"
+  }
+}
