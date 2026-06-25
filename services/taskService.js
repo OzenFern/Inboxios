@@ -39,7 +39,14 @@ export async function createTask(task) {
     showError(error);
   }
 }
-export async function updateTask(id) {}
+export async function updateTask(id, task) {
+  try {
+    const response = await notion.patch(`/pages/${id}`, toNotionUpdate(task));
+    return mapTask(response.data);
+  } catch (error) {
+    showError(error);
+  }
+}
 export async function deleteTask(id) {
   try {
     const response = await notion.patch(`/pages/${id}`, { in_trash: true });

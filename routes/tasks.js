@@ -9,13 +9,23 @@ router.get("/", async (req, res) => {
   const response = await notion.getTasks();
   res.json(response);
 });
+
 router.post("/", async (req, res) => {
   const task = req.body;
   const response = await notion.createTask(task);
 
   res.send(response);
 });
-router.patch("/:id", notion.updateTask);
+
+router.patch("/:id", async (req, res) => {
+  const id = req.params.id;
+  const task = req.body;
+
+  const response = await notion.updateTask(id, task);
+
+  res.send(response);
+});
+
 router.delete("/:id", async (req, res) => {
   const id = req.params.id;
   const title = await notion.deleteTask(id);
