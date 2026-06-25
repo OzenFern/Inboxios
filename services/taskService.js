@@ -19,10 +19,25 @@ function createBody(task) {
   };
 }
 
-export async function getTasks() {
+export async function getTasks(status = null) {
   try {
+    const body = {
+      sorts: [
+        {
+          property: "Created",
+          direction: "descending",
+        },
+      ],
+    };
+    if (status) {
+      body.filter = {
+        property: "Status",
+        status: { equals: status },
+      };
+    }
     const response = await notion.post(
       `/data_sources/${process.env.NOTION_DS_ID}/query`,
+      body,
     );
     return response.data.results.map(mapTask);
   } catch (error) {

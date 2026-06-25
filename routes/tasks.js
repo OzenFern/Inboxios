@@ -6,7 +6,7 @@ import * as notion from "../services/taskService.js";
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const response = await notion.getTasks();
+  const response = await notion.getTasks(req.query.status);
   res.json(response);
 });
 
