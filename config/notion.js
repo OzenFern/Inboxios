@@ -1,4 +1,5 @@
 import axios from "axios";
+import "dotenv/config";
 
 const AUTH_TOKEN = process.env.NOTION_ACCESS_TOKEN;
 
