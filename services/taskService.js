@@ -1,4 +1,5 @@
 import { notion } from "../config/notion.js";
+import { PROPERTIES } from "../config/properties.js";
 import { mapTask, toNotionTask, toNotionUpdate } from "../utils/taskMapper.js";
 
 function showError(error) {
@@ -24,14 +25,14 @@ export async function getTasks(status = null) {
     const body = {
       sorts: [
         {
-          property: "Created",
+          property: PROPERTIES.CREATED,
           direction: "descending",
         },
       ],
     };
     if (status) {
       body.filter = {
-        property: "Status",
+        property: PROPERTIES.STATUS,
         status: { equals: status },
       };
     }

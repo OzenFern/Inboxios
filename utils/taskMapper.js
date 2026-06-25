@@ -1,11 +1,13 @@
+import { PROPERTIES } from "../config/properties.js";
+
 export function mapTask(task) {
-  const due = task.properties.Due.date;
-  const status = task.properties.Status?.status?.name;
+  const due = task.properties[PROPERTIES.DUE].date;
+  const status = task.properties[PROPERTIES.STATUS]?.status?.name;
   if (!status) throw new Error("Task is missing a Status property");
 
   return {
     id: task.id,
-    title: task.properties.Name.title[0]?.text?.content ?? "",
+    title: task.properties[PROPERTIES.TITLE]?.title?.[0]?.text?.content ?? "",
     status,
     startDate: due?.start ?? null,
     endDate: due?.end ?? null,
@@ -28,7 +30,7 @@ function buildDate(task) {
 export function toNotionTask(task) {
   return {
     properties: {
-      Name: {
+      [PROPERTIES.TITLE]: {
         title: [
           {
             text: {
@@ -37,12 +39,12 @@ export function toNotionTask(task) {
           },
         ],
       },
-      Status: {
+      [PROPERTIES.STATUS]: {
         status: {
           name: task.status,
         },
       },
-      Due: buildDate(task),
+      [PROPERTIES.DUE]: buildDate(task),
     },
   };
 }
@@ -50,7 +52,7 @@ export function toNotionTask(task) {
 export function toNotionUpdate(task) {
   const properties = {};
   if (task.title !== undefined) {
-    properties.Name = {
+    properties[PROPERTIES.TITLE] = {
       title: [
         {
           text: {
@@ -62,14 +64,14 @@ export function toNotionUpdate(task) {
   }
 
   if (task.status !== undefined) {
-    properties.Status = {
+    properties[PROPERTIES.STATUS] = {
       status: {
         name: task.status,
       },
     };
   }
   if (task.startDate !== undefined) {
-    properties.Due = buildDate(task);
+    properties[PROPERTIES.DUE] = buildDate(task);
   }
   return { properties };
 }
