@@ -9,4 +9,6 @@ export function validateDatabase(dataSource) {
     throw new Error(`Missing or invalid property: ${PROPERTIES.STATUS}`);
   if (properties[PROPERTIES.DUE]?.type !== "date")
     throw new Error(`Missing or invalid property: ${PROPERTIES.DUE}`);
+  if (properties[PROPERTIES.CREATED]?.type !== "created_time")
+    throw new Error(`Missing or invalid property: ${PROPERTIES.CREATED}`);
 }
