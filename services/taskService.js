@@ -19,7 +19,16 @@ function createBody(task) {
   };
 }
 
-export async function getTasks() {}
+export async function getTasks() {
+  try {
+    const response = await notion.post(
+      `/data_sources/${process.env.NOTION_DS_ID}/query`,
+    );
+    return response.data.results.map(mapTask);
+  } catch (error) {
+    showError(error);
+  }
+}
 export async function createTask(task) {
   try {
     task.status ??= "To Do"; // Defaults to To Do if status is missing
