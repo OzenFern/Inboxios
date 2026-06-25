@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import morgan from "morgan";
 import taskRouter from "./routes/tasks.js";
+import { checkDatabase } from "./services/checkDatabase.js";
 
 const PORT = process.env.PORT;
 const app = express();
@@ -23,7 +24,24 @@ app.use((req, res) => {
   console.error(`Error: Cannot ${req.method} ${req.originalUrl}`);
 });
 
-// Listen to server on a port
-app.listen(PORT, () => {
-  console.log(`Inboxios live at http://localhost:${PORT}`);
-});
+// Start server if database schema is valid
+(async () => {
+  console.log("Validating database schema...");
+
+  try {
+    const database = await checkDatabase();
+
+    const title = database.title?.[0]?.plain_text ?? "Unknown Database";
+
+    console.log(`✓ Connected to: ${title}`);
+    console.log("✓ Database schema is valid");
+
+    app.listen(PORT, () => {
+      console.log(`Inboxios live at http://localhost:${PORT}`);
+    });
+  } catch (error) {
+    console.error("Failed to start server:");
+    console.error(error.message);
+    process.exit(1);
+  }
+})();
