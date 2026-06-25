@@ -16,6 +16,10 @@ router.post("/", async (req, res) => {
   res.send(response);
 });
 router.patch("/:id", notion.updateTask);
-router.delete("/:id", notion.deleteTask);
+router.delete("/:id", async (req, res) => {
+  const id = req.params.id;
+  const title = await notion.deleteTask(id);
+  res.send(`<h1>${title} page deleted</h1>`);
+});
 
 export default router;
