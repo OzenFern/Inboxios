@@ -4,7 +4,7 @@
   "description": "> Capture now, Sync Later\r A lightweight offline-first capture tool that syncs notes to Notion.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest",
     "dev": "nodemon app.js",
     "start": "node app.js"
   },
@@ -13,7 +13,8 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.14",
+    "vitest": "^4.1.9"
   },
   "dependencies": {
     "axios": "^1.18.0",
