@@ -2,7 +2,7 @@ import "dotenv/config";
 import express from "express";
 import morgan from "morgan";
 import taskRouter from "./routes/tasks.js";
-import { checkDatabase } from "./services/checkDatabase.js";
+import { checkDatabase } from "./services/databaseService.js";
 
 const PORT = process.env.PORT;
 const app = express();

@@ -1,5 +1,5 @@
 import { test, expect } from "vitest";
-import { validateDatabase } from "../utils/validateDatabase.js";
+import { validateDatabase } from "../src/utils/validateDatabase.js";
 
 test("Valid database passes validation", () => {
   const dataSource = {

@@ -1,5 +1,9 @@
 import { test, expect } from "vitest";
-import { mapTask, toNotionTask, toNotionUpdate } from "../utils/taskMapper.js";
+import {
+  mapTask,
+  toNotionTask,
+  toNotionUpdate,
+} from "../src/utils/taskMapper.js";
 
 test("Maps Notion page properties to task", () => {
   expect(mapTask(notionPage)).toEqual({
