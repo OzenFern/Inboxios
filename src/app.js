@@ -1,6 +1,9 @@
 import "dotenv/config";
 import express from "express";
 import morgan from "morgan";
+import path from "path";
+import { fileURLToPath } from "url";
+import pageRouter from "./routes/page.js";
 import taskRouter from "./routes/tasks.js";
 import { checkDatabase } from "./services/databaseService.js";
 
@@ -10,18 +13,35 @@ const app = express();
 // Check if .env variables exist
 if (!PORT) throw new Error("PORT environment variable is required");
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Setup EJS template engine
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev")); // Monitoring HTTP requests
+app.use(express.static(path.join(__dirname, "public")));
 
+// Handle homepage route
+app.use("/", pageRouter);
 // Handle all routes for tasks
-app.use("/tasks", taskRouter);
+app.use("/api/tasks", taskRouter);
 
 // Handles invalid routes
 app.use((req, res) => {
-  res.status(404).json({ error: "Route not found" });
-  console.error(`Error: Cannot ${req.method} ${req.originalUrl}`);
+  res.status(404).render("404");
+  console.log(`Error: Cannot ${req.method} ${req.originalUrl}`);
+});
+
+// Handles server error
+app.use((err, req, res, next) => {
+  res.status(500).render("500");
+  console.error(err);
+  next();
 });
 
 // Start server if database schema is valid
