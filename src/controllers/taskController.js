@@ -1,10 +1,11 @@
 import * as taskService from "../services/taskService.js";
-import query from "../utils/buildQuery.js";
+import query from "../utils/buildUrl.js";
 import { QUERY_PARAMS, MESSAGES } from "../config/queryParams.js";
+import { ROUTES } from "../config/routes.js";
 
 export async function getTasks(req, res) {
-  const response = await taskService.getTasks(req.query.status);
-  res.json(response);
+  const tasks = await taskService.getTasks(req.query.status);
+  res.render(tasks);
 }
 
 export async function createTask(req, res) {
@@ -12,7 +13,7 @@ export async function createTask(req, res) {
   const { title } = await taskService.createTask(task);
 
   res.redirect(
-    query({
+    query(ROUTES.TASKS, {
       [QUERY_PARAMS.MESSAGE]: MESSAGES.CREATED,
       [QUERY_PARAMS.TITLE]: title,
     }),
@@ -26,7 +27,7 @@ export async function updateTask(req, res) {
   const { title } = await taskService.updateTask(id, body);
 
   res.redirect(
-    query({
+    query(ROUTES.TASKS, {
       [QUERY_PARAMS.MESSAGE]: MESSAGES.UPDATED,
       [QUERY_PARAMS.TITLE]: title,
     }),
@@ -38,7 +39,7 @@ export async function deleteTask(req, res) {
   const { title } = await taskService.deleteTask(id);
 
   res.redirect(
-    query({
+    query(ROUTES.TASKS, {
       [QUERY_PARAMS.MESSAGE]: MESSAGES.DELETED,
       [QUERY_PARAMS.TITLE]: title,
     }),

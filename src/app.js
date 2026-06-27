@@ -6,6 +6,7 @@ import { fileURLToPath } from "url";
 import pageRouter from "./routes/page.js";
 import taskRouter from "./routes/tasks.js";
 import { checkDatabase } from "./services/databaseService.js";
+import { ROUTES } from "./config/routes.js";
 
 const PORT = process.env.PORT;
 const app = express();
@@ -29,7 +30,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Handle homepage route
 app.use("/", pageRouter);
 // Handle all routes for tasks
-app.use("/api/tasks", taskRouter);
+app.use(ROUTES.TASKS, taskRouter);
 
 // Handles invalid routes
 app.use((req, res) => {
