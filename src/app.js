@@ -33,15 +33,24 @@ app.use("/api/tasks", taskRouter);
 
 // Handles invalid routes
 app.use((req, res) => {
-  res.status(404).render("404");
-  console.log(`Error: Cannot ${req.method} ${req.originalUrl}`);
+  console.warn(`Error: Cannot ${req.method} ${req.originalUrl}`);
+
+  return res.status(404).render("404");
 });
 
 // Handles server error
 app.use((err, req, res, next) => {
-  res.status(500).render("500");
   console.error(err);
-  next();
+
+  if (res.headersSent) {
+    return next(err); // Passed on to Express's internal error middleware
+  }
+
+  if (req.path.startsWith("/api")) {
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+
+  return res.status(500).render("500");
 });
 
 // Start server if database schema is valid
