@@ -5,7 +5,7 @@ const AUTH_TOKEN = process.env.NOTION_ACCESS_TOKEN;
 
 if (!AUTH_TOKEN) throw new Error("Notion Authentication Token is required");
 
-export const notion = axios.create({
+const notion = axios.create({
   baseURL: "https://api.notion.com/v1",
   headers: {
     Authorization: `Bearer ${AUTH_TOKEN}`,
@@ -13,3 +13,14 @@ export const notion = axios.create({
     "Content-Type": "application/json",
   },
 });
+
+// Add a request interceptor for errors
+notion.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    console.error(error.response?.data ?? error);
+    return Promise.reject(error);
+  },
+);
+
+export { notion };
