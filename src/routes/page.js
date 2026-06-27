@@ -1,13 +1,9 @@
 import express from "express";
+import * as pageController from "../controllers/pageController.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("Hello!");
-});
-
-router.get("/about", (req, res) => {
-  res.send("About");
-});
+router.get("/", pageController.home);
+router.get("/about", pageController.about);
 
 export default router;
