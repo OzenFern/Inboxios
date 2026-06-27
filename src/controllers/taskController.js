@@ -1,5 +1,6 @@
 import * as taskService from "../services/taskService.js";
 import query from "../utils/buildQuery.js";
+import { QUERY_PARAMS, MESSAGES } from "../config/queryParams.js";
 
 export async function getTasks(req, res) {
   const response = await taskService.getTasks(req.query.status);
@@ -12,8 +13,8 @@ export async function createTask(req, res) {
 
   res.redirect(
     query({
-      message: "created",
-      title,
+      [QUERY_PARAMS.MESSAGE]: MESSAGES.CREATED,
+      [QUERY_PARAMS.TITLE]: title,
     }),
   );
 }
@@ -26,8 +27,8 @@ export async function updateTask(req, res) {
 
   res.redirect(
     query({
-      message: "updated",
-      title,
+      [QUERY_PARAMS.MESSAGE]: MESSAGES.UPDATED,
+      [QUERY_PARAMS.TITLE]: title,
     }),
   );
 }
@@ -38,8 +39,8 @@ export async function deleteTask(req, res) {
 
   res.redirect(
     query({
-      message: "deleted",
-      title,
+      [QUERY_PARAMS.MESSAGE]: MESSAGES.DELETED,
+      [QUERY_PARAMS.TITLE]: title,
     }),
   );
 }

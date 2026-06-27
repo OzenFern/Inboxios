@@ -1,7 +1,9 @@
+import { QUERY_PARAMS } from "../config/queryParams.js";
+
 export function home(req, res) {
   res.render("index", {
-    message: req.query.message,
-    title: req.query.title,
+    [QUERY_PARAMS.MESSAGE]: req.query.message,
+    [QUERY_PARAMS.TITLE]: req.query.title,
   });
 }
 
