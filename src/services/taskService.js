@@ -48,5 +48,5 @@ export async function updateTask(id, task) {
 }
 export async function deleteTask(id) {
   const response = await notion.patch(`/pages/${id}`, { in_trash: true });
-  return mapTask(response.data).title;
+  return mapTask(response.data);
 }
