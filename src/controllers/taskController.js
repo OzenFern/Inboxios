@@ -1,4 +1,5 @@
 import * as taskService from "../services/taskService.js";
+import query from "../utils/buildQuery.js";
 
 export async function getTasks(req, res) {
   const response = await taskService.getTasks(req.query.status);
@@ -7,23 +8,38 @@ export async function getTasks(req, res) {
 
 export async function createTask(req, res) {
   const task = req.body;
-  const response = await taskService.createTask(task);
+  const { title } = await taskService.createTask(task);
 
-  res.send(response);
+  res.redirect(
+    query({
+      message: "created",
+      title,
+    }),
+  );
 }
 
 export async function updateTask(req, res) {
-  const id = req.params.id;
-  const task = req.body;
+  const { id } = req.params;
+  const { task: body } = req.body;
 
-  const response = await taskService.updateTask(id, task);
+  const { title } = await taskService.updateTask(id, body);
 
-  res.send(response);
+  res.redirect(
+    query({
+      message: "updated",
+      title,
+    }),
+  );
 }
 
 export async function deleteTask(req, res) {
   const id = req.params.id;
-  const title = await taskService.deleteTask(id);
+  const { title } = await taskService.deleteTask(id);
 
-  res.send(`<h1>${title} page deleted</h1>`);
+  res.redirect(
+    query({
+      message: "deleted",
+      title,
+    }),
+  );
 }
