@@ -1,0 +1,176 @@
+<%- include('partials/header') %>
+
+<h1>About <%= APP.NAME %></h1>
+
+<!-- Tagline -->
+<div class="container">
+  <h2>Capture now. Sync later.</h2>
+  <p>
+    Inboxios is an
+    <strong> open-source, offline-first task manager</strong> designed to make
+    task capture fast, reliable, and distraction-free. It integrates with Notion
+    while ensuring that creating a task never depends on having a perfect
+    internet connection.
+  </p>
+  <div class="quote">
+    <h3 class="quote-title">The philosophy is simple:</h3>
+    <p class="quote-body">
+      Your productivity shouldn't stop because your connection does.
+    </p>
+  </div>
+</div>
+
+<!-- Problem -->
+<div class="container">
+  <h2>The Problem</h2>
+  <p>
+    Most productivity applications rely on a constant internet connection. Even
+    a brief network interruption can slow down or completely interrupt your
+    workflow.
+  </p>
+  <p>
+    When your goal is simply to capture an idea before you forget it, waiting
+    for an API request is unnecessary friction.
+  </p>
+  <p class="highlight">Inboxios aims to eliminate that friction.</p>
+</div>
+
+<!-- Solution -->
+<div class="container">
+  <h2>The Solution</h2>
+  <p>Inboxios follows an <strong>offline-first</strong> approach.</p>
+  <p>
+    Every task is designed to be captured instantly and stored locally first.
+    Synchronization with Notion happens separately, allowing you to continue
+    working without interruption.
+  </p>
+  <p>This means you can:</p>
+  <ul class="simple-list">
+    <li>Capture tasks instantly</li>
+    <li>Continue working offline</li>
+    <li>Synchronize changes when a connection becomes available</li>
+    <li>Keep your workflow uninterrupted</li>
+  </ul>
+  <p>
+    The application treats synchronization as a background process rather than
+    something that blocks the user.
+  </p>
+</div>
+
+<!-- Working -->
+<div class="container">
+  <h2>How <%= APP.NAME %> Works</h2>
+  <div class="flowchart">
+    <div class="step">Create Task</div>
+    <div class="step">Inboxios</div>
+    <div class="step">Local Storage</div>
+    <div class="step">Synchronization Queue</div>
+    <div class="step">Notion API</div>
+    <div class="step">Your Notion Workspace</div>
+  </div>
+  <p>
+    The long-term goal is to make synchronization automatic and resilient,
+    ensuring that your local data and Notion remain in sync with minimal user
+    interaction.
+  </p>
+</div>
+
+<!-- Tech Stack -->
+<div class="container">
+  <h2>Tech Stack</h2>
+  <p>
+    Inboxios is built with a modern JavaScript stack focused on simplicity and
+    maintainability.
+  </p>
+  <dl class="tech-dl">
+    <dt>Node.js</dt>
+    <dd>JavaScript runtime</dd>
+    <dt>Express</dt>
+    <dd>Web framework</dd>
+    <dt>EJS</dt>
+    <dd>Server-side rendering</dd>
+    <dt>Axios</dt>
+    <dd>Communication with the Notion API</dd>
+    <dt>Notion API</dt>
+    <dd>Task storage and synchronization</dd>
+    <dt>CSS</dt>
+    <dd>Responsive user interface</dd>
+  </dl>
+  <p>
+    The project intentionally avoids unnecessary complexity while maintaining a
+    modular architecture.
+  </p>
+</div>
+
+<!-- Reason for Building -->
+<div class="container">
+  <h2>Why I Built <%= APP.NAME %></h2>
+  <p>
+    Inboxios began as a way to explore REST APIs and backend development with
+    Express.
+  </p>
+
+  <p>
+    As the project grew, it became an opportunity to experiment with software
+    architecture, server-side rendering, synchronization strategies, and
+    building production-style web applications.
+  </p>
+
+  <p>
+    Rather than simply connecting a frontend to an API, the goal is to
+    understand how real-world applications are designed, structured, and
+    maintained.
+  </p>
+</div>
+
+<!-- Open Source -->
+<div class="container">
+  <h2>Open Source</h2>
+  <p>Inboxios is an open-source project.</p>
+
+  <p>
+    Whether you're looking to learn Express, explore the Notion API, or
+    contribute ideas, you're welcome to explore the project.
+  </p>
+  <h3>Resources</h3>
+  <ul class="btn-group">
+    <li class="icon-text">
+      <a
+        href="<%= APP.LINKS.DOCS %>"
+        class="btn"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Documentation</a
+      >
+    </li>
+    <li class="icon-text">
+      <a
+        href="<%= APP.LINKS.GITHUB %>"
+        class="btn"
+        target="_blank"
+        rel="noopener noreferrer"
+        >GitHub Repository</a
+      >
+    </li>
+    <li class="icon-text">
+      <a
+        href="<%= APP.LINKS.ISSUES %>"
+        class="btn"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Report an Issue</a
+      >
+    </li>
+    <li class="icon-text">
+      <a
+        href="<%= APP.LINKS.TEMPLATE %>"
+        class="btn"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Notion Template</a
+      >
+    </li>
+  </ul>
+</div>
+
+<%- include('partials/footer') %>
