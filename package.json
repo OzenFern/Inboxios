@@ -2,7 +2,22 @@
   "name": "inboxios",
   "version": "1.0.0",
   "description": "> Capture now, Sync Later\r A lightweight offline-first capture tool that syncs notes to Notion.",
+  "keywords": [],
+  "homepage": "https://github.com/OzenFern/Inboxios#readme",
+  "bugs": {
+    "url": "https://github.com/OzenFern/Inboxios/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OzenFern/Inboxios.git"
+  },
+  "license": "ISC",
+  "author": "Ozenf",
+  "type": "module",
   "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
     "dev": "node --watch src/app.js",
     "start": "node src/app.js",
@@ -12,22 +27,18 @@
     "format": "prettier . --write",
     "format:check": "prettier . --check"
   },
-  "keywords": [],
-  "author": "Ozenf",
-  "license": "ISC",
-  "type": "module",
-  "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "eslint": "^10.5.0",
-    "globals": "^17.7.0",
-    "prettier": "^3.8.4",
-    "vitest": "^4.1.9"
-  },
   "dependencies": {
     "axios": "^1.18.0",
     "dotenv": "^17.4.2",
     "ejs": "^6.0.1",
     "express": "^5.2.1",
     "morgan": "^1.11.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.5.0",
+    "globals": "^17.7.0",
+    "prettier": "^3.8.4",
+    "vitest": "^4.1.9"
   }
 }
