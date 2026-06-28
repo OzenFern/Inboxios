@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Space+Grotesk&display=swap"
+      rel="stylesheet"
+    />
+    <title><%= APP.NAME %></title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="navbar">
+          <li><a href="/"><%= APP.NAME %></a></li>
+          <li><a href="<%= ROUTES.TASKS %>">Tasks</a></li>
+          <li>
+            <a
+              href="<%= APP.LINKS.TEMPLATE %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Template</a
+            >
+          </li>
+          <li>
+            <a
+              href="<%= APP.LINKS.DOCS %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Docs</a
+            >
+          </li>
+          <li><a href="<%= ROUTES.ABOUT %>">About</a></li>
+          <li>
+            <a
+              href="<%= APP.LINKS.GITHUB %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
