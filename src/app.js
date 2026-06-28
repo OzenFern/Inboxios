@@ -7,6 +7,7 @@ import pageRouter from "./routes/page.js";
 import taskRouter from "./routes/tasks.js";
 import { checkDatabase } from "./services/databaseService.js";
 import { ROUTES } from "./config/routes.js";
+import setLocals from "./config/locals.js";
 
 const PORT = process.env.PORT;
 const app = express();
@@ -20,6 +21,9 @@ const __dirname = path.dirname(__filename);
 // Setup EJS template engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
+// Global EJS variables
+setLocals(app);
 
 // Middlewares
 app.use(express.json());
