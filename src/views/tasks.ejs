@@ -1,0 +1,53 @@
+<%- include("partials/header") %>
+<section class="page-header">
+    <div class="heading">
+        <h1>Tasks</h1>
+        <p>
+            Create, organize and manage your tasks.
+        </p>
+    </div>
+    <%- include("partials/taskButton", {
+        mode: "create",
+        label: "Create Tasks",
+        id: null
+    }) %>
+</section>
+<section class="toolbar">
+    <label for="status-filter">
+        Filter
+    </label>
+    <select
+        id="status-filter"
+        name="status">
+        <option value="">
+            All Tasks
+        </option>
+        <% STATUS.forEach(option => { %>
+            <option value="<%= option %>">
+                <%= option %>
+            </option>
+        <% }) %>
+    </select>
+</section>
+<section class="task-grid">
+    <% if (tasks.length === 0) { %>
+        <div class="card empty-state">
+            <h2>No tasks yet</h2>
+            <p>
+                Create your first task to get started.
+            </p>
+            <%- include("partials/taskButton", {
+                mode: "create",
+                label: "Create Tasks",
+                id: null
+            }) %>
+        </div>
+    <% } else { %>
+        <% tasks.forEach(task => { %>
+            <%- include("partials/task", { task }) %>
+        <% }); %>
+    <% } %>
+</section>
+<%- include("partials/taskDialog") %>
+<%- include("partials/deleteDialog") %>
+<%- include("partials/footer") %>
