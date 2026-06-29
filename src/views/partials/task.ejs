@@ -1,0 +1,48 @@
+<article class="task card" data-id="<%= task.id %>">
+    <div class="icon-text">
+      <%- include('partials/taskLogo') %>
+      <h3><%= task.title %></h3>
+    </div>
+    
+  <div class="task-body">
+    <div class="task-field">
+      <span>Status</span>
+      <span
+        class="status status-<%= task.status.toLowerCase().replace(/\s+/g, '-') %>"
+      >
+        <%= task.status %>
+      </span>
+    </div>
+
+    <div class="task-field">
+      <span>Start</span>
+      <time datetime="<%= task.startDate ?? '' %>">
+        <%= task.startDate ?? "—" %>
+      </time>
+    </div>
+
+    <div class="task-field">
+      <span>End</span>
+      <time datetime="<%= task.endDate ?? '' %>">
+        <%= task.endDate ?? "—" %>
+      </time>
+    </div>
+  </div>
+
+  <div class="btn-group">
+    <%- include("partials/taskButton", {
+        mode: "edit",
+        label: "Edit",
+        id: task.id
+    }) %>
+    <button
+        class="btn delete-task"
+        data-id="<%= task.id %>"
+        data-title="<%= task.title %>"
+        command="show-modal"
+        commandfor="delete-dialog"
+    >
+        Delete
+    </button>
+  </div>
+</article>
