@@ -1,8 +1,8 @@
 <button
-    class="btn <%= mode %>-task"
-    data-mode="<%= mode %>"
-    <% if (id) { %>data-id="<%= id %>" <% }; %>
-    command="show-modal"
-    commandfor="task-dialog">
-    <%= label %>
+  class="btn task-action"
+  data-mode="<%= mode %>"
+  command="show-modal"
+  commandfor="task-dialog"
+>
+  <%= mode %>
 </button>

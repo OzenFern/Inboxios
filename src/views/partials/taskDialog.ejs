@@ -1,119 +1,48 @@
-<dialog id="task-dialog" data-mode="<%= mode %>" class="dialog">
-    <form id="task-form">
-        <h2>
-            <%= mode === "create"
-                ? "Create Task"
-                : "Edit Task" %>
-        </h2>
-        <div class="form-group">
-            <label for="title">
-                <%- include('partials/taskLogo') %>
-                Title
-            </label>
-            <input
-                id="title"
-                name="title"
-                type="text"
-                value="<%= task?.title ?? '' %>"
-                required>
-        </div>
-        <div class="form-group">
-            <label for="status">
-                <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-option"
-                viewBox="0 0 16 16"
-                >
-                <path
-                    d="M1 2.5a.5.5 0 0 1 .5-.5h3.797a.5.5 0 0 1 .439.26L11 13h3.5a.5.5 0 0 1 0 1h-3.797a.5.5 0 0 1-.439-.26L5 3H1.5a.5.5 0 0 1-.5-.5m10 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5"
-                />
-                </svg>
-                Status
-            </label>
-            <select
-                id="status"
-                name="status">
-                <% STATUS.forEach(status => { %>
-                    <option
-                        value="<%= status %>"
-                        <%= task?.status === status ? "selected" : "" %>
-                    >
-                        <%= status %>
-                    </option>
-                <% }) %>
-            </select>
-        </div>
-        <fieldset>
-            <legend>
-                Due Date
-            </legend>
-            <div class="form-group">
-                <label for="start">
-                    <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-calendar2"
-                    viewBox="0 0 16 16"
-                    >
-                    <path
-                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"
-                    />
-                    <path
-                        d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5z"
-                    />
-                    </svg>
-                    Start
-                </label>
-                <input
-                    id="start"
-                    name="startDate"
-                    type="datetime-local"
-                    value="<%= task?.startDate ?? '' %>">
-            </div>
-            <div class="form-group">
-                <label for="end">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-calendar2-week"
-                        viewBox="0 0 16 16"
-                        >
-                    <path
-                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"
-                        />
-                    <path
-                        d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"
-                        />
-                        </svg>
+<dialog id="task-dialog" class="dialog" data-mode="<%= BUTTON_LABELS.edit %>">
+  <form id="task-form">
+    <h2 id="task-dialog-title">Edit Task</h2>
 
-                    End
-                </label>
-                <input
-                    id="end"
-                    name="endDate"
-                    type="datetime-local"
-                    value="<%= task?.endDate ?? '' %>">
-            </div>
-        </fieldset>
-        <div class="btn-group">
-            <button
-                type="button"
-                command="close"
-                commandfor="task-dialog">
-                Cancel
-            </button>
-            <button>
-                <%= mode === "create"
-                    ? "Create Task"
-                    : "Save Changes" %>
-            </button>
-        </div >
-    </form>
+    <div class="form-group">
+      <label for="title"> <%- include("taskLogo") %> Title </label>
+
+      <input id="title" name="title" type="text" required />
+    </div>
+
+    <div class="form-group">
+      <label for="status"> Status </label>
+        <select
+            id="status"
+            name="status">
+            <% STATUS.forEach(status => { %>
+                <option value="<%= status %>">
+                    <%= status %>
+                </option>
+            <% }) %>
+        </select>
+    </div>
+
+    <fieldset>
+      <legend>Due Date</legend>
+
+      <div class="form-group">
+        <label for="startDate"> Start </label>
+
+        <input id="startDate" name="startDate" type="datetime-local" />
+      </div>
+
+      <div class="form-group">
+        <label for="endDate"> End </label>
+
+        <input id="endDate" name="endDate" type="datetime-local" />
+      </div>
+    </fieldset>
+
+    <div class="btn-group">
+      <button type="button" command="close" commandfor="task-dialog">
+        Cancel
+      </button>
+
+      <button id="task-submit" type="submit">Edit Task</button>
+    </div>
+  </form>
 </dialog>

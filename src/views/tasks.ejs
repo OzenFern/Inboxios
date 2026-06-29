@@ -7,9 +7,7 @@
         </p>
     </div>
     <%- include("partials/taskButton", {
-        mode: "create",
-        label: "Create Tasks",
-        id: null
+        mode: BUTTON_LABELS.create,
     }) %>
 </section>
 <section class="toolbar">
@@ -37,15 +35,13 @@
                 Create your first task to get started.
             </p>
             <%- include("partials/taskButton", {
-                mode: "create",
-                label: "Create Tasks",
-                id: null
+                mode: BUTTON_LABELS.create,
             }) %>
         </div>
     <% } else { %>
         <% tasks.forEach(task => { %>
             <%- include("partials/task", { task }) %>
-        <% }); %>
+        <% }) %>
     <% } %>
 </section>
 <%- include("partials/taskDialog") %>

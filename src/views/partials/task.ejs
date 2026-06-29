@@ -1,12 +1,20 @@
-<article class="task card" data-id="<%= task.id %>">
-    <div class="icon-text">
-      <%- include('partials/taskLogo') %>
-      <h3><%= task.title %></h3>
-    </div>
-    
+<article
+  class="task card"
+  data-id="<%= task.id %>"
+  data-title="<%= task.title %>"
+  data-status="<%= task.status %>"
+  data-start="<%= task.startDate ?? '' %>"
+  data-end="<%= task.endDate ?? '' %>"
+>
+  <div class="icon-text">
+    <%- include("./taskLogo") %>
+    <h3><%= task.title %></h3>
+  </div>
+
   <div class="task-body">
     <div class="task-field">
       <span>Status</span>
+
       <span
         class="status status-<%= task.status.toLowerCase().replace(/\s+/g, '-') %>"
       >
@@ -16,33 +24,31 @@
 
     <div class="task-field">
       <span>Start</span>
+
       <time datetime="<%= task.startDate ?? '' %>">
-        <%= task.startDate ?? "—" %>
+        <%= formatDate(task.startDate) %>
       </time>
     </div>
 
     <div class="task-field">
       <span>End</span>
+
       <time datetime="<%= task.endDate ?? '' %>">
-        <%= task.endDate ?? "—" %>
+        <%= formatDate(task.endDate) %>
       </time>
     </div>
   </div>
 
   <div class="btn-group">
-    <%- include("partials/taskButton", {
-        mode: "edit",
-        label: "Edit",
-        id: task.id
-    }) %>
+    <%- include("./taskButton", {
+            mode: BUTTON_LABELS.edit,
+        }) %>
     <button
-        class="btn delete-task"
-        data-id="<%= task.id %>"
-        data-title="<%= task.title %>"
-        command="show-modal"
-        commandfor="delete-dialog"
+      class="btn delete-task"
+      command="show-modal"
+      commandfor="delete-dialog"
     >
-        Delete
+      Delete
     </button>
   </div>
 </article>

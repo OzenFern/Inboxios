@@ -1,17 +1,13 @@
 <dialog id="delete-dialog" class="dialog">
   <form id="delete-form">
-    <div class="dialog-header">
-      <h2>Delete Task</h2>
-    </div>
+    <h2>Delete Task</h2>
 
-    <div class="dialog-body">
-      <p>
-        Are you sure you want to delete
-        <strong id="delete-task-title"><%= task.title %></strong>?
-      </p>
+    <p>
+      Are you sure you want to delete
+      <strong id="delete-task-title"></strong>?
+    </p>
 
-      <p class="muted">This action cannot be undone.</p>
-    </div>
+    <p class="muted">This action cannot be undone.</p>
 
     <div class="btn-group">
       <button type="button" command="close" commandfor="delete-dialog">
