@@ -1,0 +1,28 @@
+:root {
+  /* Fonts */
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+
+  /* Timing */
+  --transition-fast: 1s;
+  --transition-normal: 2s;
+  --transition-slow: 3s;
+
+  /* Z-index */
+  --z-dropdown: 100;
+  --z--navbar: 900;
+  --z-hamgurber: 1000;
+  --z-dialog: 1500;
+  --z-tooltip: 2000;
+}
