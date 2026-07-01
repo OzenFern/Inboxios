@@ -17,9 +17,16 @@
   </head>
   <body>
     <header>
-      <nav>
-        <ul class="navbar">
-          <li><a href="/"><%= APP.NAME %></a></li>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a href="/" class="navbar-logo"><%= APP.NAME %></a>
+          <button class="navbar-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+        <ul class="navbar-menu">
           <li><a href="<%= ROUTES.TASKS %>">Tasks</a></li>
           <li>
             <a
