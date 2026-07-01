@@ -1,6 +1,25 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--navbar-height);
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--background);
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 50%;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-hover);
 }
 
 body::before {
@@ -17,7 +36,7 @@ body::before {
 body {
   position: relative;
   isolation: isolate;
-  min-height: 100vh;
+  min-height: 100dvh;
   background-position: center;
   background: var(--gradient-background);
   background-size: 400% 400%;
