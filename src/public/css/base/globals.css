@@ -1,0 +1,25 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--navbar-height);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: url("/assets/images/forest-fog.jpg") center / cover no-repeat;
+
+  opacity: 0.2;
+  z-index: -1;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background-position: center;
+  background: var(--gradient-background);
+  background-size: 400% 400%;
+  animation: pan-gradient 5s ease-in-out infinite alternate both;
+}
