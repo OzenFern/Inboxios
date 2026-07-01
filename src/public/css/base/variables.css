@@ -1,4 +1,7 @@
 :root {
+  /* Navbar */
+  --navbar-height: 5rem;
+
   /* Fonts */
   --font-body: "Inter", sans-serif;
   --font-heading: "Space Grotesk", sans-serif;
