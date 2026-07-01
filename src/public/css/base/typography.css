@@ -2,9 +2,10 @@ body {
   font-family: var(--font-body);
   font-size: var(--fs-200);
   line-height: 1.5;
+  color: var(--text-primary);
 }
 
-h1,
+/* h1, */
 h2,
 h3,
 h4,
@@ -25,6 +26,24 @@ select {
 h1 {
   font-weight: 900;
   font-size: var(--fs-600);
+
+  letter-spacing: 0.2rem;
+
+  background: var(--gradient-heading);
+  background-size: 400% 400%;
+
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  filter: drop-shadow(
+      0 0 8px color-mix(in oklch, var(--lavender) 60%, transparent)
+    )
+    drop-shadow(0 0 20px color-mix(in oklch, var(--mauve) 40%, transparent))
+    drop-shadow(0 0 40px color-mix(in oklch, var(--pink) 25%, transparent));
+  animation:
+    pan-gradient 10s linear infinite,
+    pulse-glow 3s ease-in-out infinite;
 }
 
 h2 {
