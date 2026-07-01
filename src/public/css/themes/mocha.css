@@ -44,22 +44,22 @@
   --text-muted: var(--subtext0);
 
   --accent: var(--mauve);
-  --accent-hover: color-mix(in oklch var(--accent) white 0.1);
-  --accent-active: color-mix(in oklch var(--accent) black 0.1);
+  --accent-hover: color-mix(in oklab, var(--accent), white 10%);
+  --accent-active: color-mix(in oklab, var(--accent), black 10%);
 
   --success: var(--green);
   --warning: var(--yellow);
   --danger: var(--red);
 
   --border: var(--overlay0);
-  --border-hover: color-mix(in oklab var(--overlay1) var(--accent) 0.2);
+  --border-hover: color-mix(in oklab, var(--overlay1), var(--accent) 20%);
 
-  --shadow-color: color-mix(in oklch var(--crust) 0.7 transparent);
-  --shadow-color-strong: color-mix(in oklch var(--crust) 0.35 transparent);
+  --shadow-color: color-mix(in oklab, var(--crust) 70%, transparent);
+  --shadow-color-strong: color-mix(in oklab, var(--crust) 35%, transparent);
 
-  --focus-ring: color-mix(in oklch var(--accent) white 0.2);
+  --focus-ring: color-mix(in oklab, var(--accent), white 20%);
 
-  --selection: color-mix(in oklch var(--accent) transparent 0.7);
+  --selection: color-mix(in oklab, var(--accent), transparent 70%);
 
   --disabled: var(--overlay0);
   --disabled-text: var(--overlay2);
@@ -67,9 +67,9 @@
   --gradient-background: linear-gradient(
     135deg,
     var(--crust) 0%,
-    color-mix(in oklch, var(--base) 95%, var(--mauve)) 30%,
+    color-mix(in oklab, var(--base) 95%, var(--mauve)) 30%,
     var(--base) 60%,
-    color-mix(in oklch, var(--base) 95%, var(--blue)) 80%,
+    color-mix(in oklab, var(--base) 95%, var(--blue)) 80%,
     var(--crust) 100%
   );
   --gradient-heading: linear-gradient(
