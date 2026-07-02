@@ -3,23 +3,23 @@ html {
   scroll-padding-top: var(--navbar-height);
   scrollbar-width: thin;
   scrollbar-color: var(--accent) var(--background);
-}
 
-::-webkit-scrollbar {
-  width: 0.8rem;
-}
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+  }
 
-::-webkit-scrollbar-track {
-  background-color: var(--background);
-}
+  &::-webkit-scrollbar-track {
+    background-color: var(--background);
+  }
 
-::-webkit-scrollbar-thumb {
-  background-color: var(--accent);
-  border-radius: 50%;
-}
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 50%;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--accent-hover);
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-hover);
+  }
 }
 
 body::before {
@@ -29,16 +29,20 @@ body::before {
 
   background: url("/assets/images/forest-fog.jpg") center / cover no-repeat;
 
-  opacity: 0.2;
+  opacity: 0.4;
   z-index: -1;
 }
 
 body {
   position: relative;
   isolation: isolate;
+
+  padding-top: var(--navbar-height);
   min-height: 100dvh;
+
   background-position: center;
   background: var(--gradient-background);
   background-size: 400% 400%;
+
   animation: pan-gradient 5s ease-in-out infinite alternate both;
 }
