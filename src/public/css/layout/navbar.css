@@ -10,12 +10,7 @@
 }
 
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   height: var(--navbar-height);
-  width: 100%;
 
   position: fixed;
   top: 0;
@@ -35,11 +30,8 @@
 }
 
 .navbar-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: space-between !important;
 
-  width: 100%;
   max-width: 1600px;
 
   padding-inline: 2rem;
