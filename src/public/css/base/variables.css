@@ -1,6 +1,8 @@
 :root {
   /* Navbar */
   --navbar-height: 5rem;
+  --navbar-logo-height: 2rem;
+  --side-drawer-width: clamp(11rem, 40vw + 1rem, 13rem);
 
   /* Fonts */
   --font-body: "Inter", sans-serif;
@@ -25,15 +27,14 @@
   --space-md: 1rem;
   --space-lg: 2rem;
 
-  /* Timing */
-  --transition-fast: 1s;
-  --transition-normal: 2s;
-  --transition-slow: 3s;
-
   /* Z-index */
   --z-dropdown: 100;
-  --z--navbar: 900;
-  --z-hamgurber: 1000;
+  --z-navbar: 900;
+  --z-overlay: 800;
+  --z-hamburger: 1000;
   --z-dialog: 1500;
   --z-tooltip: 2000;
+
+  /* Transition */
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
