@@ -34,6 +34,9 @@ body::before {
 }
 
 body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
   position: relative;
   isolation: isolate;
 
@@ -45,4 +48,8 @@ body {
   background-size: 400% 400%;
 
   animation: pan-gradient 5s ease-in-out infinite alternate both;
+}
+
+main {
+  min-width: 0; /* Prevent overflow of layout items */
 }
