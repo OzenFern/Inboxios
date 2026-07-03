@@ -25,3 +25,67 @@
       drop-shadow(0 0 50px color-mix(in oklch, var(--pink) 15%, transparent));
   }
 }
+
+/* @keyframes pulse-heart {
+  0%,
+  100% {
+    transform: scale(1.2);
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 1px var(--red));
+  }
+} */
+
+@keyframes pulse-heart {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: drop-shadow(0 0 2px var(--red));
+  }
+
+  15% {
+    transform: scale(1.18);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 3px var(--red));
+  }
+
+  30% {
+    transform: scale(1);
+    opacity: 1;
+    filter: drop-shadow(0 0 2px var(--red));
+  }
+
+  45% {
+    transform: scale(1.1);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 3px var(--red));
+  }
+
+  60% {
+    transform: scale(0.95);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 2px var(--red));
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-dot {
+  from {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
