@@ -26,19 +26,6 @@
   }
 }
 
-/* @keyframes pulse-heart {
-  0%,
-  100% {
-    transform: scale(1.2);
-  }
-
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-    filter: drop-shadow(0 0 1px var(--red));
-  }
-} */
-
 @keyframes pulse-heart {
   0%,
   100% {
@@ -87,5 +74,11 @@
   to {
     transform: scale(2.5);
     opacity: 0;
+  }
+}
+
+@keyframes rotate-border {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
