@@ -1,0 +1,158 @@
+.btn {
+  cursor: pointer;
+  color: var(--crust);
+
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+
+  border-radius: 3rem;
+  border: none;
+  background: var(--btn-primary-color);
+
+  transition: transform 0.4s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.1);
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.btn:focus-visible {
+  outline: none;
+
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--accent) 40%, transparent);
+}
+
+.btn-lg {
+  font-size: var(--fs-300) !important;
+}
+
+.btn.danger,
+.btn.warning {
+  background: transparent;
+  backdrop-filter: 10px;
+}
+
+.btn.danger {
+  color: var(--danger);
+  border: 2px solid var(--danger);
+}
+
+.btn.danger:hover {
+  background: var(--danger);
+  color: var(--crust);
+}
+
+.btn.btn.warning {
+  color: var(--warning);
+  border: 2px solid var(--warning);
+}
+
+.btn.btn.warning:hover {
+  background: var(--warning);
+  color: var(--crust);
+}
+
+.btn.confirm {
+  background: var(--confirm);
+}
+
+.btn.confirm:hover {
+  background: transparent;
+  backdrop-filter: 10px;
+
+  color: var(--confirm);
+  border: 2px solid var(--confirm);
+}
+
+.btn-gradient {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-primary);
+  box-shadow: 0 5px 10px 1px var(--shadow-color);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gradient::before {
+  content: "";
+
+  position: absolute;
+
+  width: 200%;
+  height: 200%;
+
+  border-radius: inherit;
+  background: var(--btn-gradient);
+
+  z-index: -2;
+}
+
+.btn-gradient::after {
+  content: "";
+
+  position: absolute;
+  inset: 3px;
+
+  border-radius: 2rem;
+  background-color: var(--background);
+
+  opacity: 1;
+  z-index: -1;
+}
+
+.btn-gradient:hover {
+  z-index: 0;
+
+  box-shadow:
+    20px 0 100px var(--blue),
+    -20px 0 100px rgb(102, 51, 153);
+}
+
+.btn-gradient.btn-primary {
+  color: var(--crust);
+}
+
+.btn-gradient.btn-primary::after {
+  opacity: 0;
+}
+
+.btn-gradient.btn-primary:hover::after {
+  opacity: 1;
+}
+
+.btn-gradient.btn-primary:hover {
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.btn-gradient.btn-secondary {
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.btn-gradient.btn-secondary::after {
+  opacity: 1;
+}
+
+.btn-gradient.btn-secondary:hover::after {
+  opacity: 0;
+}
+
+.btn-gradient.btn-secondary:hover {
+  color: var(--crust);
+}
+
+.btn-group {
+  margin-top: clamp(2rem, 5vw + 1rem, 4rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+}
