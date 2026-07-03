@@ -18,8 +18,7 @@ footer {
   align-content: center;
 
   border-top: 1px solid var(--border-hover);
-  width: 100%;
-  max-width: 1300px;
+  width: clamp(60%, 80vw + 0.5rem, 1300px);
 
   margin-top: 1rem;
   padding: 1rem 1.5rem;
