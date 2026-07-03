@@ -78,5 +78,10 @@
     var(--mauve),
     var(--pink)
   );
+  --gradient-badge: linear-gradient(
+    135deg,
+    color-mix(in oklch, var(--surface1) 90%, var(--lavender)),
+    color-mix(in oklch, var(--surface0) 88%, var(--blue))
+  );
   /* --gradient-card */
 }
