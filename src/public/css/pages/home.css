@@ -1,0 +1,27 @@
+.hero {
+  height: calc(100svh - var(--navbar-height));
+}
+
+.hero > .container {
+  height: 90%;
+}
+
+.about {
+  padding-block: var(--space-2xl);
+}
+
+.features {
+  padding-block: var(--space-2xl);
+}
+
+.tech-stack {
+  padding-block: var(--space-2xl);
+}
+
+.cta {
+  padding-block: var(--space-3xl);
+}
+
+.btn-group {
+  margin-top: clamp(2rem, 5vw + 1rem, 4rem);
+}
