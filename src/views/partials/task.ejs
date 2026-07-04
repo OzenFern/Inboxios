@@ -6,10 +6,7 @@
   data-start="<%= task.startDate ?? '' %>"
   data-end="<%= task.endDate ?? '' %>"
 >
-  <div class="icon-text">
-    <%- include("./taskLogo") %>
-    <h3><%= task.title %></h3>
-  </div>
+    <h3 class="title"><%= task.title %></h3>
 
   <div class="task-body">
     <div class="task-field">
