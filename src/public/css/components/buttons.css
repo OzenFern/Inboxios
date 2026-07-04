@@ -1,4 +1,6 @@
 .btn {
+  font-size: var(--fs-200);
+
   cursor: pointer;
   color: var(--crust);
 
@@ -7,13 +9,12 @@
 
   border-radius: 3rem;
   border: none;
-  background: var(--btn-primary-color);
 
   transition: transform 0.4s ease-in-out;
 }
 
 .btn:hover {
-  transform: translateY(-2px) scale(1.1);
+  transform: translateY(-1.5px) scale(1.05);
 }
 
 .btn:active {
@@ -26,46 +27,67 @@
   box-shadow: 0 0 0 4px color-mix(in oklch, var(--accent) 40%, transparent);
 }
 
-.btn-lg {
+.btn.btn-lg {
   font-size: var(--fs-300) !important;
 }
 
-.btn.danger,
-.btn.warning {
-  background: transparent;
-  backdrop-filter: 10px;
+.btn.btn.btn-lg:hover {
+  transform: translateY(-2px) scale(1.1) !important;
 }
 
-.btn.danger {
+.btn.btn-danger,
+.btn.btn-warning,
+.btn.btn-links,
+.btn.btn-confirm:hover,
+.btn.btn-danger-fill:hover,
+.btn.btn-action:hover {
+  background: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.btn.btn-danger,
+.btn.btn-danger-fill:hover {
   color: var(--danger);
   border: 2px solid var(--danger);
 }
 
-.btn.danger:hover {
+.btn.btn-danger:hover,
+.btn.btn-danger-fill {
   background: var(--danger);
   color: var(--crust);
 }
 
-.btn.btn.warning {
+.btn.btn-warning {
   color: var(--warning);
   border: 2px solid var(--warning);
 }
 
-.btn.btn.warning:hover {
+.btn.btn-warning:hover {
   background: var(--warning);
   color: var(--crust);
 }
 
-.btn.confirm {
+.btn.btn-confirm {
   background: var(--confirm);
 }
 
-.btn.confirm:hover {
-  background: transparent;
-  backdrop-filter: 10px;
-
+.btn.btn-confirm:hover {
   color: var(--confirm);
   border: 2px solid var(--confirm);
+}
+
+.btn.btn-action {
+  background: var(--btn-primary-color);
+}
+
+.btn.btn-action:hover {
+  border: 2px solid var(--btn-primary-color);
+  color: var(--btn-primary-color);
+}
+
+.btn.btn-links {
+  color: var(--accent-hover);
+  border: 2px solid var(--accent);
 }
 
 .btn-gradient {
@@ -116,6 +138,7 @@
 }
 
 .btn-gradient.btn-primary {
+  background: var(--btn-gradient);
   color: var(--crust);
 }
 
@@ -150,9 +173,12 @@
 }
 
 .btn-group {
-  margin-top: clamp(2rem, 5vw + 1rem, 4rem);
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  place-items: center;
+  place-content: center;
+
   gap: var(--space-lg);
+  flex-flow: row wrap;
+
+  text-align: center;
 }
