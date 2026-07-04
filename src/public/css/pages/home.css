@@ -2,16 +2,16 @@
   height: calc(100svh - var(--navbar-height));
 }
 
-.hero > .container {
-  height: 90%;
-}
-
 .about {
   padding-block: var(--space-2xl);
 }
 
 .features {
   padding-block: var(--space-2xl);
+}
+
+.features svg {
+  height: var(--fs-500);
 }
 
 .tech-stack {
