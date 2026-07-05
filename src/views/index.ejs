@@ -1,8 +1,7 @@
 <%- include('partials/header', { 
-  pageTitle: "Home" , stylesheet: "/css/pages/home.css"
+  pageTitle: "Home"
 }) %>
 
-<!-- Hero Section -->
 <section class="hero">
   <div class="container fluid-container">
     <h1><%= APP.NAME %></h1>
@@ -23,8 +22,7 @@
   </div>
 </section>
 
-<!-- What is -->
-<section class="about">
+<section class="about block-space-2xl">
   <div class="container">
     <h2>What is <%= APP.NAME %>?</h2>
     <p>
@@ -44,8 +42,7 @@
   </div>
 </section>
 
-<!-- Features -->
-<section class="features">
+<section class="features block-space-2xl">
   <div class="container">
     <h2>Features</h2>
     <div class="grid grid-auto">
@@ -54,7 +51,7 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
-            class="bi bi-lightning-charge-fill"
+            class="svg-h-500 bi bi-lightning-charge-fill"
             viewBox="0 0 16 16"
           >
             <path
@@ -86,7 +83,7 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
-            class="bi bi-card-checklist"
+            class="svg-h-500 bi bi-card-checklist"
             viewBox="0 0 16 16"
           >
             <path
@@ -120,7 +117,7 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
-            class="bi bi-arrow-repeat"
+            class="svg-h-500 bi bi-arrow-repeat"
             viewBox="0 0 16 16"
           >
             <path
@@ -157,7 +154,7 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
-            class="bi bi-wifi-off"
+            class="svg-h-500 bi bi-wifi-off"
             viewBox="0 0 16 16"
           >
             <path
@@ -187,7 +184,7 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
-            class="bi bi-cloud-arrow-up-fill"
+            class="svg-h-500 bi bi-cloud-arrow-up-fill"
             viewBox="0 0 16 16"
           >
             <path
@@ -219,7 +216,7 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
-            class="bi bi-tools"
+            class="svg-h-500 bi bi-tools"
             viewBox="0 0 16 16"
           >
             <path
@@ -248,8 +245,7 @@
   </div>
 </section>
 
-<!-- Tech Stack -->
-<section class="tech-stack">
+<section class="tech-stack block-space-2xl">
   <div class="container">
     <h2>Tech Stack</h2>
     <ul class="badge-list">
@@ -263,7 +259,7 @@
   </div>
 </section>
 
-<section class="cta">
+<section class="cta block-space-3xl">
   <div class="container">
     <h3>Ready to capture tasks without breaking your flow?</h3>
     <a href="<%= ROUTES.TASKS %>" class="btn btn-lg btn-gradient btn-primary"

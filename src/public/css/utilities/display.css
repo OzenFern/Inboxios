@@ -5,3 +5,7 @@
 
   width: 100%;
 }
+
+.svg-h-500 {
+  height: var(--fs-500);
+}
