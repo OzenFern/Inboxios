@@ -9,3 +9,14 @@
 .svg-h-500 {
   height: var(--fs-500);
 }
+
+.icon-text {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-text.col {
+  flex-direction: column;
+}
