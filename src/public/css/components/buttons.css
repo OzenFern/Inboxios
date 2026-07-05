@@ -91,7 +91,7 @@
   border: 2px solid var(--accent);
 }
 
-.btn-gradient {
+.btn.btn-gradient {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,7 +102,7 @@
   overflow: hidden;
 }
 
-.btn-gradient::before {
+.btn.btn-gradient::before {
   content: "";
 
   position: absolute;
@@ -116,7 +116,7 @@
   z-index: -2;
 }
 
-.btn-gradient::after {
+.btn.btn-gradient::after {
   content: "";
 
   position: absolute;
@@ -129,7 +129,7 @@
   z-index: -1;
 }
 
-.btn-gradient:hover {
+.btn.btn-gradient:hover {
   z-index: 0;
 
   box-shadow:
@@ -137,38 +137,38 @@
     -20px 0 100px rgb(102, 51, 153);
 }
 
-.btn-gradient.btn-primary {
+.btn.btn-gradient.btn-primary {
   background: var(--btn-gradient);
   color: var(--crust);
 }
 
-.btn-gradient.btn-primary::after {
+.btn.btn-gradient.btn-primary::after {
   opacity: 0;
 }
 
-.btn-gradient.btn-primary:hover::after {
+.btn.btn-gradient.btn-primary:hover::after {
   opacity: 1;
 }
 
-.btn-gradient.btn-primary:hover {
+.btn.btn-gradient.btn-primary:hover {
   color: var(--text-primary);
   background: transparent;
 }
 
-.btn-gradient.btn-secondary {
+.btn.btn-gradient.btn-secondary {
   color: var(--text-primary);
   background: transparent;
 }
 
-.btn-gradient.btn-secondary::after {
+.btn.btn-gradient.btn-secondary::after {
   opacity: 1;
 }
 
-.btn-gradient.btn-secondary:hover::after {
+.btn.btn-gradient.btn-secondary:hover::after {
   opacity: 0;
 }
 
-.btn-gradient.btn-secondary:hover {
+.btn.btn-gradient.btn-secondary:hover {
   color: var(--crust);
 }
 
