@@ -1,0 +1,77 @@
+.dropdown {
+  appearance: base-select;
+  background: color-mix(in oklab, var(--surface), var(--background) 30%);
+
+  border: 2px solid var(--btn-primary-color);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+
+  box-shadow: 0 5px 10px 1px var(--shadow-color);
+}
+
+.dropdown::picker(select) {
+  appearance: base-select;
+  background: color-mix(in oklab, var(--surface), var(--background-alt) 30%);
+
+  color: var(--text-secondary);
+
+  border: 2px solid var(--accent-active);
+  border-radius: 0.5rem;
+
+  box-shadow: 1px 10px 20px 10px var(--shadow-color);
+}
+
+.dropdown::picker-icon {
+  color: var(--accent-hover);
+
+  align-content: center;
+  text-align: center;
+
+  transition: rotate 150ms;
+}
+
+.dropdown:open::picker-icon {
+  rotate: -180deg;
+}
+
+/* ISSUES */
+/* Using oklch color codes since variables aren't being rendered */
+
+.dropdown option {
+  justify-content: center;
+  padding-right: 0.25rem;
+
+  color: oklch(82% 0.04 273); /* subtext 1 from Mocha.css */
+}
+
+.dropdown option:checked {
+  /* mantle 75% & surface0 25% */
+  background-color: color-mix(
+    in oklab,
+    oklch(22% 0.025 284),
+    oklch(32% 0.032 282) 25%
+  );
+}
+
+.dropdown option::checkmark {
+  content: "☑️";
+}
+
+.dropdown selectedcontent {
+  color: var(--accent-active);
+  font-weight: 600;
+}
+
+/* Coloring status names */
+
+.dropdown.status-filter option[value="To Do"] {
+  color: var(--to-do-color);
+}
+
+.dropdown.status-filter option[value="Doing"] {
+  color: var(--doing-color);
+}
+
+.dropdown.status-filter option[value="Done"] {
+  color: var(--done-color);
+}
