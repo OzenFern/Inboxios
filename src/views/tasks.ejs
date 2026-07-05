@@ -1,48 +1,86 @@
-<%- include("partials/header") %>
+<%- include('partials/header', { 
+  pageTitle: "Tasks" , stylesheet: "/css/pages/tasks.css"
+}) %>
+
 <section class="page-header">
-    <div class="heading">
+    <div class="container">
         <h1>Tasks</h1>
-        <p>
+        <p class="sub-text">
             Create, organize and manage your tasks.
         </p>
     </div>
-    <%- include("partials/taskButton", {
-        mode: BUTTON_LABELS.create,
-    }) %>
 </section>
 <section class="toolbar">
-    <label for="status-filter">
-        Filter
-    </label>
-    <select
-        id="status-filter"
-        name="status">
-        <option value="">
-            All Tasks
-        </option>
-        <% STATUS.forEach(option => { %>
-            <option value="<%= option %>">
-                <%= option %>
-            </option>
-        <% }) %>
-    </select>
-</section>
-<section class="grid grid-auto">
-    <% if (tasks.length === 0) { %>
-        <div class="card empty-state">
-            <h2>No tasks yet</h2>
-            <p>
-                Create your first task to get started.
-            </p>
+    <div class="container">
+        <div class="btn-group">
             <%- include("partials/taskButton", {
                 mode: BUTTON_LABELS.create,
             }) %>
+            <select
+            class="dropdown status-filter"
+                id="status-filter"
+                name="status">
+                <button>
+                    <selectedcontent></selectedcontent>
+                </button>
+                <option value="">
+                    All Tasks
+                </option>
+                <% STATUS.forEach(option => { %>
+                    <option value="<%= option %>">
+                        <%= option %>
+                    </option>
+                <% }) %>
+            </select>
         </div>
-    <% } else { %>
-        <% tasks.forEach(task => { %>
-            <%- include("partials/task", { task }) %>
-        <% }) %>
-    <% } %>
+    </div>
+</section>
+<section class="tasks container">
+    <div class="grid grid-auto">
+        <% if (tasks.length === 0) { %>
+            <div class="card card-hover">
+                <div class="icon-text col">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="{1.5}"
+                    stroke="currentColor"
+                    className="size-6"
+                    >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H6.911a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661Z"
+                    />
+                    </svg>
+                    <h2>No tasks yet</h2>
+                </div>
+                <p class="card-text">Create your first task to get started.</p>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="info-icon"
+                    >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            </div>
+                <%- include("partials/taskButton", {
+                    mode: BUTTON_LABELS.create,
+                }) %>
+        <% } else { %>
+            <% tasks.forEach(task => { %>
+                <%- include("partials/task", { task }) %>
+            <% }) %>
+        <% } %>
+    </div>
 </section>
 <%- include("partials/taskDialog") %>
 <%- include("partials/deleteDialog") %>
