@@ -52,6 +52,10 @@
   --danger: var(--red);
   --confirm: var(--peach);
 
+  --to-do-color: var(--maroon);
+  --doing-color: var(--blue);
+  --done-color: var(--success);
+
   --btn-primary-color: color-mix(in oklab, var(--blue) 60%, rebeccapurple);
 
   --border: var(--overlay0);
