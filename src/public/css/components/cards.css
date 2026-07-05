@@ -15,9 +15,9 @@
   box-shadow: 1px 3px 10px var(--shadow-color);
 }
 
-.card .btn-group {
+/* .card .btn-group {
   margin-top: auto;
-}
+} */
 
 .card.card-hover {
   border: none;
@@ -121,4 +121,83 @@
 
 .card.card-hover:hover .info-icon {
   opacity: 0;
+}
+
+/* Task Card */
+
+.card.card-task {
+  border: 5px solid var(--border-hover);
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  container-name: task;
+  container-type: inline-size;
+}
+
+.task-body {
+  margin-block: var(--space-xs);
+}
+
+.task-field {
+  display: flex;
+  align-items: center;
+
+  gap: var(--space-md);
+  margin-block: var(--space-sm);
+
+  text-align: center;
+}
+
+.task-field > .field-name {
+  color: var(--focus-ring);
+}
+
+.task-field > .field-name::after {
+  content: ":";
+
+  padding-inline: 5px;
+}
+
+.task-field > .field-value {
+  color: var(--text-seondary);
+
+  opacity: 0.85;
+  scale: 0.9;
+
+  transition:
+    opacity 0.4s ease-in-out,
+    scale 0.4s ease-in-out;
+}
+
+.task-field > .field-value:hover {
+  opacity: 1;
+  scale: 1;
+}
+
+.status {
+  color: var(--crust) !important;
+  backdrop-filter: blur(10px);
+
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+.status.status-to-do {
+  background: color-mix(in oklab, var(--to-do-color), var(--background) 20%);
+}
+
+.status.status-doing {
+  background: color-mix(in oklab, var(--doing-color), var(--background) 20%);
+}
+
+.status.status-done {
+  background: color-mix(in oklab, var(--done-color), var(--background) 20%);
+}
+
+@container task (max-width: 250px) {
+  .task-field {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
 }
