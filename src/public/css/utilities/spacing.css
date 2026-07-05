@@ -1,3 +1,7 @@
+.block-space-lg {
+  padding-block: var(--space-lg);
+}
+
 .block-space-xl {
   padding-block: var(--space-xl);
 }
@@ -6,6 +10,6 @@
   padding-block: var(--space-2xl);
 }
 
-.block-space-2xl {
-  padding-block: var(--space-2xl);
+.block-space-3xl {
+  padding-block: var(--space-3xl);
 }
