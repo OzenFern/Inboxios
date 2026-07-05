@@ -84,3 +84,57 @@
 .badge-list li:hover::after {
   opacity: 1;
 }
+
+.dot-badge {
+  display: inline-flex;
+  gap: var(--space-sm);
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  background: color-mix(in oklch, var(--accent) 8%, transparent);
+
+  border: 1px solid var(--border-hover);
+  box-shadow: 2px 4px 5px var(--shadow-color-strong);
+  border-radius: 999px;
+
+  padding: 0.2rem 0.5rem;
+  z-index: 0;
+}
+
+.dot-badge .dot {
+  position: relative;
+
+  width: 0.6rem;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+}
+
+.dot-badge .dot::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+  background: inherit;
+
+  animation: pulse-dot 2s infinite;
+}
+
+.success-dot {
+  background: var(--success);
+  box-shadow: 0 0 8px var(--success);
+}
+
+.warning-dot {
+  background-color: var(--warning);
+  box-shadow: 0 0 8px var(--warning);
+}
+
+.danger-dot {
+  background-color: var(--danger);
+  box-shadow: 0 0 8px var(--danger);
+}
