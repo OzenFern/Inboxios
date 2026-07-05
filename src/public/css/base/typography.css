@@ -85,3 +85,32 @@ p {
 strong {
   color: var(--accent);
 }
+
+.sub-text-lg {
+  font-size: var(--fs-400);
+  color: var(--text-secondary);
+}
+
+.fs-100 {
+  font-size: var(--fs-100);
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
