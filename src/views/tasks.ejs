@@ -2,16 +2,12 @@
   pageTitle: "Tasks" , stylesheet: "/css/pages/tasks.css"
 }) %>
 
-<section class="page-header">
-    <div class="container">
+<section class="hero block-space-3xl">
+    <div class="container fluid-container">
         <h1>Tasks</h1>
-        <p class="sub-text">
+        <p class="sub-text-lg">
             Create, organize and manage your tasks.
         </p>
-    </div>
-</section>
-<section class="toolbar">
-    <div class="container">
         <div class="btn-group">
             <%- include("partials/taskButton", {
                 mode: BUTTON_LABELS.create,
@@ -35,7 +31,8 @@
         </div>
     </div>
 </section>
-<section class="tasks container">
+
+<section class="tasks container block-space-lg">
     <div class="grid grid-auto">
         <% if (tasks.length === 0) { %>
             <div class="card card-hover">
@@ -82,6 +79,7 @@
         <% } %>
     </div>
 </section>
+
 <%- include("partials/taskDialog") %>
 <%- include("partials/deleteDialog") %>
 <%- include("partials/footer") %>
