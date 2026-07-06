@@ -1,12 +1,16 @@
-<div class="container fluid-container alert message">
-  <p class="body">
-    <% if (locals.message === ERROR) { %>
-        Don't worry there's no <strong>error</strong> you've stumbled across a hidden easter egg!
-    <% } %>
-
-    <% if (locals.message && locals.title) { %>
-        <em><%= title %></em> <strong><%= message %></strong> successfully!
-    <% } %>
-  </p>
-  <span class="dismiss">&times;</span>
-</div>
+<% if (locals.message) { %>
+    <div class="container block-space-xl">
+        <div class="alert">
+            <p class="body">
+                <% if (locals.message === ERROR) { %>
+                    Don't worry there's no <strong>error</strong> you've stumbled across a hidden easter egg!
+                <% } else if (locals.message && locals.title) { %>
+                    <strong><%= title %></strong> <em><%= message %></em> successfully!
+                <% } %>
+            </p>
+            <button class="btn btn-close" type="button" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+<% } %>
