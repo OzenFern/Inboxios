@@ -5,7 +5,12 @@ import { ROUTES } from "../config/routes.js";
 
 export async function getTasks(req, res) {
   const tasks = await taskService.getTasks(req.query.status);
-  res.render("tasks", { tasks });
+
+  res.render("tasks", {
+    tasks,
+    [QUERY_PARAMS.MESSAGE]: req.query.message,
+    [QUERY_PARAMS.TITLE]: req.query.title,
+  });
 }
 
 export async function createTask(req, res) {
