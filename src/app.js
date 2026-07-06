@@ -5,6 +5,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import pageRouter from "./routes/page.js";
 import taskRouter from "./routes/tasks.js";
+import errorRouter from "./routes/error.js";
 import { checkDatabase } from "./services/databaseService.js";
 import { ROUTES } from "./config/routes.js";
 import setLocals from "./config/locals.js";
@@ -35,6 +36,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", pageRouter);
 // Handle all routes for tasks
 app.use(ROUTES.TASKS, taskRouter);
+// Handle routes to show errors on purpose
+app.use(ROUTES.ERROR, errorRouter);
 
 // Handles invalid routes
 app.use((req, res) => {
