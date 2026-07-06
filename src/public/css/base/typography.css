@@ -28,7 +28,10 @@ select {
 h1 {
   font-weight: 900;
   font-size: var(--fs-600);
+}
 
+h1,
+.glowing-heading {
   letter-spacing: 0.2rem;
 
   background: var(--gradient-heading);
@@ -86,31 +89,35 @@ strong {
   color: var(--accent);
 }
 
+.muted {
+  color: var(--text-muted);
+}
+
 .sub-text-lg {
   font-size: var(--fs-400);
   color: var(--text-secondary);
 }
 
 .fs-100 {
-  font-size: var(--fs-100);
+  font-size: var(--fs-100) !important;
 }
 
 .fs-200 {
-  font-size: var(--fs-200);
+  font-size: var(--fs-200) !important;
 }
 
 .fs-300 {
-  font-size: var(--fs-300);
+  font-size: var(--fs-300) !important;
 }
 
 .fs-400 {
-  font-size: var(--fs-400);
+  font-size: var(--fs-400) !important;
 }
 
 .fs-500 {
-  font-size: var(--fs-500);
+  font-size: var(--fs-500) !important;
 }
 
 .fs-600 {
-  font-size: var(--fs-600);
+  font-size: var(--fs-600) !important;
 }
