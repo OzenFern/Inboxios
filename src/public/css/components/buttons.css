@@ -193,4 +193,16 @@
 
   color: var(--accent-active);
   font-size: var(--fs-400);
+
+  transition:
+    opacity 0.4s,
+    scale 0.4s ease-in-out,
+    font-weight 0.2s ease-in-out;
+}
+
+.btn.btn-close:hover {
+  opacity: 1;
+  scale: 1.1;
+
+  font-weight: 700;
 }
