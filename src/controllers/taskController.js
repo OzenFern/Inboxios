@@ -8,8 +8,8 @@ export async function getTasks(req, res) {
 
   res.render("tasks", {
     tasks,
-    [QUERY_PARAMS.MESSAGE]: req.query.message,
-    [QUERY_PARAMS.TITLE]: req.query.title,
+    [QUERY_PARAMS.MESSAGE]: req.query[QUERY_PARAMS.MESSAGE],
+    [QUERY_PARAMS.TITLE]: req.query[QUERY_PARAMS.TITLE],
   });
 }
 
