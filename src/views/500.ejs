@@ -2,39 +2,20 @@
   pageTitle: "500 - Internal Server Error", stylesheet: "/css/pages/error.css"
 } %>
 
-<!-- TODO: Button Styles are not applying -->
-
 <section class="error">
   <div class="container fluid-container">
-    <span class="error-code">HTTP 500</span>
-    <div class="card error-card">
-      <div class="icon-text col">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-exclamation-diamond-fill"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
-          />
-        </svg>
-        <h2>Task</h2>
-      </div>
+    <span class="dot-badge surface-bg"><span class="dot danger-dot"></span>HTTP 500</span>
+    <h2 class="glowing-heading">Task</h2>
 
-      <div class="card-text">
-        <h3>Complete Request</h3>
+    <div class="card field-card">
+      <h3>Complete Request</h3>
+      <div class="field-body">
+        <div class="field">
+          <span class="field-name">Status</span>
 
-        <div class="btn-group">
-          <span>Status</span>
-
-          <span class="select-label warning">
+          <span class="icon-text status status-warning field-value">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
               fill="currentColor"
               class="bi bi-exclamation-triangle"
               viewBox="0 0 16 16"
@@ -50,7 +31,7 @@
           </span>
         </div>
 
-        <p>
+        <p class="sub-text-lg fs-200">
           <%= APP.NAME %> encountered an unexpected error while processing your
           request.
         </p>
@@ -58,14 +39,19 @@
         <p class="muted">
           If the problem persists, please report it on GitHub.
         </p>
-      </div>
 
-      <div class="btn-group">
-        <button id="retry-btn" class="btn btn-lg btn-primary">Retry</button>
+        <div class="btn-group center mt-lg">
+          <button id="retry-btn" class="btn btn-gradient btn-lg btn-primary">
+            Retry
+          </button>
 
-        <a class="btn btn-lg btn-secondary" href="<%= ROUTES.HOME %>">
-          Return Home
-        </a>
+          <a
+            class="btn btn-gradient btn-lg btn-secondary"
+            href="<%= ROUTES.HOME %>"
+          >
+            Return Home
+          </a>
+        </div>
       </div>
     </div>
   </div>
