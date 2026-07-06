@@ -85,6 +85,8 @@
   opacity: 1;
 }
 
+/* Dot Badge Styles */
+
 .dot-badge {
   display: inline-flex;
   gap: var(--space-sm);
