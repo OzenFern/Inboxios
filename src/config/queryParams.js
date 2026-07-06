@@ -7,4 +7,5 @@ export const MESSAGES = {
   CREATED: "created",
   UPDATED: "updated",
   DELETED: "deleted",
+  ERROR: "showError",
 };
