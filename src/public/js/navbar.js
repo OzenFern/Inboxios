@@ -1,8 +1,11 @@
-const navbar = document.querySelector(".navbar");
-const navbarToggle = document.querySelector(".navbar-toggle");
-const navbarMenu = document.querySelector(".navbar-menu");
-const navbarLinks = document.querySelectorAll(".navbar a");
-const overlay = document.querySelector("#overlay");
+import { $, $$ } from "./utils/selector.js";
+import { on } from "./utils/eventListener.js";
+
+const navbar = $(".navbar");
+const navbarToggle = $(".navbar-toggle");
+const navbarMenu = $(".navbar-menu");
+const navbarLinks = $$(".navbar a");
+const overlay = $("#overlay");
 
 function setOverlay(state) {
   overlay.classList.toggle("active", state);
@@ -28,15 +31,14 @@ function toggleNavbar() {
   }
 }
 
-navbarLinks.forEach((link) => {
-  link.addEventListener("click", closeNavbar);
-});
+// Adding Event Listeners
+on(navbarLinks, "click", closeNavbar);
 
-window.addEventListener("scroll", () => {
+on(window, "scroll", () => {
   navbar.classList.toggle("navbar-scroll", scrollY > 10);
 });
 
-document.addEventListener("click", (e) => {
+on(document, "click", (e) => {
   if (navbarToggle.contains(e.target)) {
     toggleNavbar();
     return;
