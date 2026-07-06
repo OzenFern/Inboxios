@@ -182,3 +182,15 @@
 
   text-align: center;
 }
+
+.btn.btn-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  box-shadow: none;
+
+  color: var(--accent-active);
+  font-size: var(--fs-400);
+}
