@@ -15,10 +15,6 @@
   box-shadow: 1px 3px 10px var(--shadow-color);
 }
 
-/* .card .btn-group {
-  margin-top: auto;
-} */
-
 .card.card-hover {
   border: none;
 
@@ -123,9 +119,9 @@
   opacity: 0;
 }
 
-/* Task Card */
+/* Field Card */
 
-.card.card-task {
+.card.field-card {
   border: 5px solid var(--border-hover);
 
   display: grid;
@@ -133,15 +129,18 @@
 
   container-name: task;
   container-type: inline-size;
+
+  width: 100%;
 }
 
-.task-body {
+.field-body {
   margin-block: var(--space-xs);
 }
 
-.task-field {
+.field {
   display: flex;
   align-items: center;
+  justify-content: center;
 
   gap: var(--space-md);
   margin-block: var(--space-sm);
@@ -149,17 +148,17 @@
   text-align: center;
 }
 
-.task-field > .field-name {
+.field > .field-name {
   color: var(--focus-ring);
 }
 
-.task-field > .field-name::after {
+.field > .field-name::after {
   content: ":";
 
   padding-inline: 5px;
 }
 
-.task-field > .field-value {
+.field > .field-value {
   color: var(--text-seondary);
 
   opacity: 0.85;
@@ -170,7 +169,7 @@
     scale 0.4s ease-in-out;
 }
 
-.task-field > .field-value:hover {
+.field > .field-value:hover {
   opacity: 1;
   scale: 1;
 }
@@ -195,8 +194,16 @@
   background: color-mix(in oklab, var(--done-color), var(--background) 20%);
 }
 
+.status.status-warning {
+  background: color-mix(in oklab, var(--warning), var(--background) 20%);
+}
+
+.status.status-error {
+  background: var(--danger);
+}
+
 @container task (max-width: 250px) {
-  .task-field {
+  .field {
     flex-direction: column;
     gap: var(--space-xs);
   }
