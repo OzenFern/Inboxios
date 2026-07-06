@@ -1,4 +1,4 @@
-.alert {
+.alert-box > .alert {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -11,4 +11,10 @@
 
   background: color-mix(in oklab, var(--background), var(--accent) 35%);
   box-shadow: 4px 5px 10px var(--shadow-color);
+
+  transition: opacity 0.6s ease-out;
+}
+
+.alert-box > .alert:has(.btn-close:hover) {
+  opacity: 0.7;
 }
