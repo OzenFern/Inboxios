@@ -1,0 +1,11 @@
+.quote .quote-text {
+  color: var(--text-secondary);
+
+  font-style: oblique;
+  font-weight: 600;
+}
+
+.quote .quote-text::before,
+.quote .quote-text::after {
+  content: '"';
+}
