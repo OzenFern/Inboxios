@@ -111,7 +111,7 @@
   height: 200%;
 
   border-radius: inherit;
-  background: var(--btn-gradient);
+  background: var(--gradient-btn);
 
   z-index: -2;
 }
@@ -138,7 +138,7 @@
 }
 
 .btn.btn-gradient.btn-primary {
-  background: var(--btn-gradient);
+  background: var(--gradient-btn);
   color: var(--crust);
 }
 

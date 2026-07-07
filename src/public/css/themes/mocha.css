@@ -91,7 +91,7 @@
     color-mix(in oklch, var(--surface0) 88%, var(--blue))
   );
 
-  --btn-gradient: linear-gradient(
+  --gradient-btn: linear-gradient(
     150deg,
     var(--blue),
     var(--btn-primary-color),
