@@ -7,7 +7,7 @@
   padding-inline-start: var(--space-lg);
 
   font-size: var(--fs-300);
-  border-radius: 1rem;
+  border-radius: var(--radius-lg);
 
   background: color-mix(in oklab, var(--background), var(--accent) 35%);
   box-shadow: 4px 5px 10px var(--shadow-color);

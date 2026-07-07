@@ -7,7 +7,7 @@
   font-weight: 500;
   padding: 0.5rem 1rem;
 
-  border-radius: 3rem;
+  border-radius: var(--radius-2xl);
   border: none;
 
   box-shadow: 0 5px 10px 1px var(--shadow-color);
@@ -122,7 +122,7 @@
   position: absolute;
   inset: 3px;
 
-  border-radius: 2rem;
+  border-radius: var(--radius-xl);
   background-color: var(--background);
 
   opacity: 1;
