@@ -1,0 +1,7 @@
+.surface-bg {
+  background: var(--surface) !important;
+}
+
+.fade-out {
+  opacity: 0;
+}
