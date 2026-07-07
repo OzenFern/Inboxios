@@ -13,3 +13,11 @@
 .block-space-3xl {
   padding-block: var(--space-3xl);
 }
+
+.mt-auto {
+  margin-top: auto !important;
+}
+
+.mt-lg {
+  margin-block-start: var(--space-lg) !important;
+}
