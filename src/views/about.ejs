@@ -1,139 +1,155 @@
-<%- include('partials/header', {pageTitle: "About"}) %>
+<%- include('partials/header', { pageTitle: "About" }) %>
 
-<h1>About <%= APP.NAME %></h1>
-
-<!-- Tagline -->
-<div class="container">
-  <h2>Capture now. Sync later.</h2>
-  <p>
-    Inboxios is an
-    <strong> open-source, offline-first task manager</strong> designed to make
-    task capture fast, reliable, and distraction-free. It integrates with Notion
-    while ensuring that creating a task never depends on having a perfect
-    internet connection.
-  </p>
-  <div class="quote">
-    <h3 class="quote-title">The philosophy is simple:</h3>
-    <p class="quote-body">
-      Your productivity shouldn't stop because your connection does.
+<section class="hero">
+  <div class="container fluid-container">
+    <h1>About <%= APP.NAME %></h1>
+    <h2>Capture now. Sync later.</h2>
+    <div class="quote">
+      <p class="quote-text">
+        Your productivity shouldn't stop because your connection does.
+      </p>
+    </div>
+    <p>
+      Inboxios is an
+      <strong> open-source, offline-first task manager</strong> designed to make
+      task capture fast, reliable, and distraction-free. It integrates with
+      Notion while ensuring that creating a task never depends on having a
+      perfect internet connection.
     </p>
   </div>
-</div>
+</section>
 
-<!-- Problem -->
-<div class="container">
-  <h2>The Problem</h2>
-  <p>
-    Most productivity applications rely on a constant internet connection. Even
-    a brief network interruption can slow down or completely interrupt your
-    workflow.
-  </p>
-  <p>
-    When your goal is simply to capture an idea before you forget it, waiting
-    for an API request is unnecessary friction.
-  </p>
-  <p class="highlight">Inboxios aims to eliminate that friction.</p>
-</div>
-
-<!-- Solution -->
-<div class="container">
-  <h2>The Solution</h2>
-  <p>Inboxios follows an <strong>offline-first</strong> approach.</p>
-  <p>
-    Every task is designed to be captured instantly and stored locally first.
-    Synchronization with Notion happens separately, allowing you to continue
-    working without interruption.
-  </p>
-  <p>This means you can:</p>
-  <ul class="simple-list">
-    <li>Capture tasks instantly</li>
-    <li>Continue working offline</li>
-    <li>Synchronize changes when a connection becomes available</li>
-    <li>Keep your workflow uninterrupted</li>
-  </ul>
-  <p>
-    The application treats synchronization as a background process rather than
-    something that blocks the user.
-  </p>
-</div>
-
-<!-- Working -->
-<div class="container">
-  <h2>How <%= APP.NAME %> Works</h2>
-  <div class="flowchart">
-    <div class="step">Create Task</div>
-    <div class="step">Inboxios</div>
-    <div class="step">Local Storage</div>
-    <div class="step">Synchronization Queue</div>
-    <div class="step">Notion API</div>
-    <div class="step">Your Notion Workspace</div>
+<section class="problem block-space-2xl">
+  <div class="container">
+    <h2>The Problem</h2>
+    <p>
+      Most productivity applications rely on a constant internet connection.
+      Even a brief network interruption can slow down or completely interrupt
+      your workflow.
+    </p>
+    <p>
+      When your goal is simply to capture an idea before you forget it, waiting
+      for an API request is unnecessary friction.
+    </p>
+    <p class="highlight"><strong><%= APP.NAME %></strong> aims to eliminate that friction.</p>
   </div>
-  <p>
-    The long-term goal is to make synchronization automatic and resilient,
-    ensuring that your local data and Notion remain in sync with minimal user
-    interaction.
-  </p>
-</div>
+</section>
 
-<!-- Tech Stack -->
-<div class="container">
-  <h2>Tech Stack</h2>
-  <p>
-    Inboxios is built with a modern JavaScript stack focused on simplicity and
-    maintainability.
-  </p>
-  <dl class="tech-dl">
-    <dt>Node.js</dt>
-    <dd>JavaScript runtime</dd>
-    <dt>Express</dt>
-    <dd>Web framework</dd>
-    <dt>EJS</dt>
-    <dd>Server-side rendering</dd>
-    <dt>Axios</dt>
-    <dd>Communication with the Notion API</dd>
-    <dt>Notion API</dt>
-    <dd>Task storage and synchronization</dd>
-    <dt>CSS</dt>
-    <dd>Responsive user interface</dd>
-  </dl>
-  <p>
-    The project intentionally avoids unnecessary complexity while maintaining a
-    modular architecture.
-  </p>
-</div>
+<section class="solution block-space-2xl">
+  <div class="container">
+    <h2>The Solution</h2>
+    <p>Inboxios follows an <strong>offline-first</strong> approach.</p>
+    <p>
+      Every task is designed to be captured instantly and stored locally first.
+      Synchronization with Notion happens separately, allowing you to continue
+      working without interruption.
+    </p>
+    <p>This means you can:</p>
+    <ul class="simple-list highlight">
+      <li>Capture tasks instantly</li>
+      <li>Continue working offline</li>
+      <li>Synchronize changes when a connection becomes available</li>
+      <li>Keep your workflow uninterrupted</li>
+    </ul>
+    <p>
+      The application treats synchronization as a background process rather than
+      something that blocks the user.
+    </p>
+  </div>
+</section>
 
-<!-- Reason for Building -->
-<div class="container">
-  <h2>Why I Built <%= APP.NAME %></h2>
-  <p>
-    Inboxios began as a way to explore REST APIs and backend development with
-    Express.
-  </p>
+<section class="working block-space-2xl">
+  <div class="container">
+    <h2>How <%= APP.NAME %> Works</h2>
+    <div class="flowchart">
+      <div class="step">Create Task</div>
+      <div class="step">Inboxios</div>
+      <div class="step">Local Storage</div>
+      <div class="step">Synchronization Queue</div>
+      <div class="step">Notion API</div>
+      <div class="step">Your Notion Workspace</div>
+    </div>
+    <p>
+      The long-term goal is to make synchronization automatic and resilient,
+      ensuring that your local data and Notion remain in sync with minimal user
+      interaction.
+    </p>
+  </div>
+</section>
 
-  <p>
-    As the project grew, it became an opportunity to experiment with software
-    architecture, server-side rendering, synchronization strategies, and
-    building production-style web applications.
-  </p>
+<section class="tech-stack block-space-3xl">
+  <div class="container">
+    <h2>Tech Stack</h2>
+    <p>
+      Inboxios is built with a modern JavaScript stack focused on simplicity and
+      maintainability.
+    </p>
+    <dl class="badge-list">
+      <div class="item">
+        <dt class="term">Node.js</dt>
+        <dd class="description">JavaScript runtime</dd>
+      </div>
+      <div class="item">
+        <dt class="term">Express</dt>
+        <dd class="description">Web framework</dd>
+      </div>
+      <div class="item">
+        <dt class="term">EJS</dt>
+        <dd class="description">Server-side rendering</dd>
+      </div>
+      <div class="item">
+        <dt class="term">Axios</dt>
+        <dd class="description">Communication with the Notion API</dd>
+      </div>
+      <div class="item">
+        <dt class="term">Notion API</dt>
+        <dd class="description">Task storage and synchronization</dd>
+      </div>
+      <div class="item">
+        <dt class="term">CSS</dt>
+        <dd class="description">Responsive user interface</dd>
+      </div>
+    </dl>
+    <p>
+      The project intentionally avoids unnecessary complexity while maintaining
+      a modular architecture.
+    </p>
+  </div>
+</section>
 
-  <p>
-    Rather than simply connecting a frontend to an API, the goal is to
-    understand how real-world applications are designed, structured, and
-    maintained.
-  </p>
-</div>
+<section class="reason block-space-2xl">
+  <div class="container">
+    <h2>Why I Built <%= APP.NAME %></h2>
+    <p>
+      Inboxios began as a way to explore <strong>REST API</strong>s and backend development with
+      Express.
+    </p>
 
-<!-- Open Source -->
-<div class="container">
-  <h2>Open Source</h2>
-  <p>Inboxios is an open-source project.</p>
+    <p>
+      As the project grew, it became an opportunity to experiment with software
+      architecture, server-side rendering, synchronization strategies, and
+      building production-style web applications.
+    </p>
 
-  <p>
-    Whether you're looking to learn Express, explore the Notion API, or
-    contribute ideas, you're welcome to explore the project.
-  </p>
-  <h3>Resources</h3>
-  <div class="btn-group">
+    <p>
+      Rather than simply connecting a frontend to an API, the goal is to
+      understand how real-world applications are designed, structured, and
+      maintained.
+    </p>
+  </div>
+</section>
+
+<section class="open-source block-space-2xl">
+  <div class="container">
+    <h2>Open Source</h2>
+    <p>Inboxios is an <strong>open-source</strong> project.</p>
+
+    <p>
+      Whether you're looking to learn Express, explore the Notion API, or
+      contribute ideas, you're welcome to explore the project.
+    </p>
+    <h3>Resources</h3>
+    <div class="btn-group">
       <a
         href="<%= APP.LINKS.DOCS %>"
         class="btn btn-links"
@@ -162,7 +178,8 @@
         rel="noopener noreferrer"
         >Notion Template</a
       >
+    </div>
   </div>
-</div>
+</section>
 
 <%- include('partials/footer') %>
