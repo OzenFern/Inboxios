@@ -1,5 +1,5 @@
 <article
-  class="card card-task"
+  class="card field-card"
   data-id="<%= task.id %>"
   data-title="<%= task.title %>"
   data-status="<%= task.status %>"
@@ -8,8 +8,8 @@
 >
     <h3 class="title"><%= task.title %></h3>
 
-  <div class="task-body">
-    <div class="task-field">
+  <div class="field-body">
+    <div class="field">
       <span class="field-name">Status</span>
 
       <span
@@ -19,7 +19,7 @@
       </span>
     </div>
 
-    <div class="task-field">
+    <div class="field">
       <span class="field-name">Start</span>
 
       <time class="field-value" datetime="<%= task.startDate ?? '' %>">
@@ -27,7 +27,7 @@
       </time>
     </div>
 
-    <div class="task-field">
+    <div class="field">
       <span class="field-name">End</span>
 
       <time class="field-value" datetime="<%= task.endDate ?? '' %>">
