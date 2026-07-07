@@ -9,6 +9,7 @@
 
 .badge-list .item {
   color: var(--text-secondary);
+  text-align: center;
 
   background: transparent;
   backdrop-filter: blur(20px);
@@ -83,6 +84,15 @@
 
 .badge-list .item:hover::after {
   opacity: 1;
+}
+
+.badge-list .term {
+  font-weight: 600;
+  color: var(--lavender);
+}
+
+.badge-list .description {
+  color: var(--text-muted);
 }
 
 /* Dot Badge Styles */
