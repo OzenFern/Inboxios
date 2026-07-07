@@ -130,7 +130,7 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
 
-  container-name: task;
+  container-name: fields;
   container-type: inline-size;
 
   width: 100%;
@@ -205,7 +205,7 @@
   background: var(--danger);
 }
 
-@container task (max-width: 250px) {
+@container fields (max-width: 250px) {
   .field {
     flex-direction: column;
     gap: var(--space-xs);
