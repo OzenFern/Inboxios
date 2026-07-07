@@ -48,6 +48,12 @@ body {
   background-size: 400% 400%;
 
   animation: pan-gradient 5s ease-in-out infinite alternate both;
+
+  :focus-visible {
+    outline: none;
+
+    box-shadow: 0 0 0 4px var(--accent-active);
+  }
 }
 
 main {
