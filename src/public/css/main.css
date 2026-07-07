@@ -17,6 +17,7 @@
 @import url("./layout/grid.css");
 @import url("./layout/footer.css");
 
+@import url("./components/alert.css");
 @import url("./components/buttons.css");
 @import url("./components/cards.css");
 @import url("./components/dialogs.css");
@@ -25,4 +26,4 @@
 @import url("./components/badges.css");
 @import url("./components/hero.css");
 @import url("./components/dropdown.css");
-@import url("./components/alert.css");
+@import url("./components/quote.css");
