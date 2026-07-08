@@ -21,3 +21,7 @@
 .mt-lg {
   margin-block-start: var(--space-lg) !important;
 }
+
+.pd-btn-sm {
+  padding: 0.25rem 0.5rem !important;
+}
