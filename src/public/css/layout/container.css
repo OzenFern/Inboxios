@@ -10,6 +10,10 @@
   padding-inline: var(--space-lg);
 }
 
+.container.sm-container {
+  padding-inline: var(--space-sm) !important;
+}
+
 .container p {
   max-width: 60ch;
   text-align: center;
