@@ -1,5 +1,4 @@
-import { $, $$ } from "./utils/selector.js";
-import { on } from "./utils/eventListener.js";
+import { $, $$, on } from "./utils.js";
 
 const navbar = $(".navbar");
 const navbarToggle = $(".navbar-toggle");
