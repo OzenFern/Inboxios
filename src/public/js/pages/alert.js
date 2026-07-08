@@ -1,4 +1,4 @@
-import { on, $$ } from "./utils.js";
+import { on, $$ } from "../utils.js";
 
 on($$(".btn-close"), "click", function () {
   const alertBox = this.closest(".alert-box");
