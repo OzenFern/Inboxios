@@ -1,18 +1,21 @@
-<dialog id="task-dialog" class="dialog" data-mode="<%= BUTTON_LABELS.edit %>">
-  <form id="task-form">
-    <h2 id="task-dialog-title">Edit Task</h2>
+<dialog id="task-dialog" data-mode="<%= BUTTON_LABELS.edit %>">
+  <form id="task-form" class="container sm-container">
+    <h2 id="task-dialog-title" class="mt-lg">Edit Task</h2>
 
-    <div class="form-group">
-      <label for="title"> <%- include("taskLogo") %> Title </label>
+    <div class="field">
+      <label for="title" class="field-name"> <%- include("taskLogo") %> Title </label>
 
-      <input id="title" name="title" type="text" required />
+      <input id="title" class="field-value dark-txt" name="title" type="text" placeholder="New Task" required />
     </div>
 
-    <div class="form-group">
-      <label for="status"> Status </label>
-        <select
+    <div class="field">
+      <label for="status" class="field-name"> Status </label>
+        <select class="dropdown status-filter pd-btn-sm"
             id="status"
             name="status">
+              <button>
+                <selectedcontent></selectedcontent>
+              </button>
             <% STATUS.forEach(status => { %>
                 <option value="<%= status %>">
                     <%= status %>
@@ -22,22 +25,22 @@
     </div>
 
     <fieldset>
-      <legend>Due Date</legend>
+      <legend class="highlight">Due Date</legend>
 
-      <div class="form-group">
-        <label for="startDate"> Start </label>
+      <div class="field">
+        <label for="startDate" class="field-name"> Start </label>
 
-        <input id="startDate" name="startDate" type="datetime-local" />
+        <input id="startDate" name="startDate" type="datetime-local"  class="field-value dark-txt" />
       </div>
 
-      <div class="form-group">
-        <label for="endDate"> End </label>
+      <div class="field">
+        <label for="endDate" class="field-name"> End </label>
 
-        <input id="endDate" name="endDate" type="datetime-local" />
+        <input id="endDate" name="endDate" type="datetime-local" class="field-value dark-txt" />
       </div>
     </fieldset>
 
-    <div class="btn-group">
+    <div class="btn-group block-space-lg">
       <button class="btn btn-warning" type="button" command="close" commandfor="task-dialog">
         Cancel
       </button>
