@@ -21,7 +21,8 @@ h6,
 button,
 input,
 textarea,
-select {
+select,
+dialog {
   font: inherit;
 }
 
@@ -124,4 +125,8 @@ strong {
 
 .highlight {
   color: var(--sky);
+}
+
+.dark-txt {
+  color: var(--crust) !important;
 }
