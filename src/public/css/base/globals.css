@@ -1,4 +1,10 @@
+:root {
+  color-scheme: dark;
+}
+
 html {
+  background: var(--background);
+
   scroll-behavior: smooth;
   scroll-padding-top: var(--navbar-height);
   scrollbar-width: thin;
