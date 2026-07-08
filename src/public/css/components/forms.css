@@ -1,0 +1,11 @@
+form fieldset {
+  padding: if(media(width <= 300px): 0.25 0.5rem; else: 0.5rem 1rem);
+
+  border-radius: var(--radius-lg);
+  border: 2px double var(--border-hover);
+}
+
+form fieldset legend {
+  font-weight: 700;
+  padding-inline: var(--space-sm);
+}
