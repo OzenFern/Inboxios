@@ -10,3 +10,18 @@ export function on(element, eventType, callback) {
     element.addEventListener(eventType, callback);
   }
 }
+
+// LocalStorage
+export const cache = {
+  get(key, fallback = null) {
+    return localStorage.getItem(key) ?? fallback;
+  },
+
+  set(key, value) {
+    localStorage.setItem(key, value);
+  },
+
+  remove(key, fallback = null) {
+    localStorage.removeItem(key) ?? fallback;
+  },
+};
