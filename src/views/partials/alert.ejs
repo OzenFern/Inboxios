@@ -2,9 +2,9 @@
     <div class="container block-space-xl alert-box">
         <div class="alert">
             <p class="body">
-                <% if (locals.message === ERROR) { %>
+                <% if (locals.message === MESSAGES.ERROR) { %>
                     Don't worry there's no <strong>error</strong> you've stumbled across a hidden easter egg!
-                <% } else if (locals.message && locals.title) { %>
+                <% } else if (locals.title) { %>
                     <strong><%= title %></strong> <em><%= message %></em> successfully!
                 <% } %>
             </p>
