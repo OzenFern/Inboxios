@@ -35,11 +35,20 @@
         </p>
       </div>
     </footer>
+    <script>
+        window.APP_CONFIG = {
+            ROUTES: <%- JSON.stringify(ROUTES) %>,
+            STATUS: <%- JSON.stringify(STATUS) %>,
+            BUTTON_LABELS: <%- JSON.stringify(BUTTON_LABELS) %>,
+        };
+    </script>
     <script type="module" src="/js/main.js"></script>
-    <% if (locals.scriptPaths) { %>
-      <% scriptPaths.forEach(scriptPath => { %>
-     <script type="module" src="<%= scriptPath %>"></script>
-    <%  }); %>
-    <% } %>
+    <script type="module" src="/js/main.js"></script>
+        <script type="module" src="/js/main.js"></script>
+        <% if (locals.scriptPaths) { %>
+          <% scriptPaths.forEach(scriptPath => { %>
+        <script type="module" src="<%= scriptPath %>"></script>
+        <%  }); %>
+        <% } %>
   </body>
 </html>
