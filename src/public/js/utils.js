@@ -12,7 +12,7 @@ export function on(element, eventType, callback) {
 }
 
 // LocalStorage
-export const cache = {
+export const storageCache = {
   get(key, fallback = null) {
     return localStorage.getItem(key) ?? fallback;
   },
