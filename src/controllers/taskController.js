@@ -4,7 +4,8 @@ import { QUERY_PARAMS, MESSAGES } from "../config/queryParams.js";
 import { ROUTES } from "../config/routes.js";
 
 export async function getTasks(req, res) {
-  const tasks = await taskService.getTasks(req.query.status);
+  const status = QUERY_PARAMS.STATUS;
+  const tasks = await taskService.getTasks(req.query[status]);
 
   res.render("tasks", {
     tasks,
