@@ -1,6 +1,7 @@
 import { $, on, storageCache } from "../../utils.js";
 
 const taskFilter = $("#status-filter");
+const status = window.APP_CONFIG.QUERY_PARAMS.STATUS;
 
 on(taskFilter, "change", async () => {
   const filter = taskFilter.selectedOptions[0].value;
@@ -8,7 +9,7 @@ on(taskFilter, "change", async () => {
   storageCache.set("task-filter", filter);
 
   const params = new URLSearchParams({
-    status: filter,
+    [status]: filter,
   });
 
   location.search = filter ? params : "";
@@ -27,7 +28,7 @@ on(window, "load", () => {
   if (!savedFilter) return;
 
   const search = new URLSearchParams({
-    status: savedFilter,
+    [status]: savedFilter,
   });
 
   location.search = search;
