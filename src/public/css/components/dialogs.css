@@ -9,7 +9,7 @@ dialog {
   overflow: clip;
   width: min(100%, 30rem);
 
-  position: relative;
+  position: fixed;
   top: 50%;
   left: 50%;
 
