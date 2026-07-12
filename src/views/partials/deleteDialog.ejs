@@ -1,5 +1,5 @@
 <dialog id="delete-dialog" class="dialog">
-  <form id="delete-form" class="container">
+  <form id="delete-form" class="container" method="post">
     <h2 class="mt-lg">Delete Task</h2>
 
     <p>
@@ -21,7 +21,9 @@
         Cancel
       </button>
 
-      <button type="submit" class="btn btn-danger-fill">Delete</button>
+      <button type="submit" class="btn btn-danger-fill" id="confirm-delete">
+        Delete
+      </button>
     </div>
   </form>
 </dialog>
