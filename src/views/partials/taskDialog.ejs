@@ -1,6 +1,6 @@
 <dialog id="task-dialog" data-mode="<%= BUTTON_LABELS.edit %>">
-  <form id="task-form" class="container sm-container">
-    <h2 id="task-dialog-title" class="mt-lg">Edit Task</h2>
+  <form id="task-form" class="container sm-container" method="post">
+    <h2 id="task-dialog-title" class="mt-lg"><%= BUTTON_LABELS.edit %></h2>
 
     <div class="field">
       <label for="title" class="field-name"> <%- include("taskLogo") %> Title </label>
@@ -45,7 +45,7 @@
         Cancel
       </button>
 
-      <button class="btn btn-confirm" id="task-submit" type="submit">Edit Task</button>
+      <button class="btn btn-confirm" id="task-submit" type="submit"><%= BUTTON_LABELS.edit %></button>
     </div>
   </form>
 </dialog>
