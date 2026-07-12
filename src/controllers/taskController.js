@@ -46,7 +46,7 @@ export async function updateTask(req, res) {
   const { title } = await taskService.updateTask(id, task);
 
   const params = {
-    [QUERY_PARAMS.MESSAGE]: MESSAGES.CREATED,
+    [QUERY_PARAMS.MESSAGE]: MESSAGES.UPDATED,
     [QUERY_PARAMS.TITLE]: title,
   };
 
@@ -62,7 +62,7 @@ export async function deleteTask(req, res) {
   const { title } = await taskService.deleteTask(id);
 
   const params = {
-    [QUERY_PARAMS.MESSAGE]: MESSAGES.CREATED,
+    [QUERY_PARAMS.MESSAGE]: MESSAGES.DELETED,
     [QUERY_PARAMS.TITLE]: title,
   };
 
