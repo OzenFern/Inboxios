@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import morgan from "morgan";
+import methodOverride from "method-override";
 import path from "path";
 import { fileURLToPath } from "url";
 import pageRouter from "./routes/page.js";
@@ -31,6 +32,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev")); // Monitoring HTTP requests
 app.use(express.static(path.join(__dirname, "public")));
+// Add method-override
+app.use(methodOverride("_method"));
 
 // Handle homepage route
 app.use("/", pageRouter);
