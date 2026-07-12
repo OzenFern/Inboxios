@@ -32,11 +32,11 @@ setLocals(app);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev")); // Monitoring HTTP requests
+// Add compression
+app.use(compression());
 app.use(express.static(path.join(__dirname, "public"), { maxAge: "30d" })); // Cache public folder
 // Add method-override
 app.use(methodOverride("_method"));
-// Add compression
-app.use(compression());
 
 // Handle homepage route
 app.use("/", pageRouter);
