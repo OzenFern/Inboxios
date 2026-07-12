@@ -2,15 +2,16 @@ import "dotenv/config";
 import express from "express";
 import morgan from "morgan";
 import methodOverride from "method-override";
-import path from "path";
-import { fileURLToPath } from "url";
+import helmet from "helmet";
 import compression from "compression";
 import pageRouter from "./routes/page.js";
 import taskRouter from "./routes/tasks.js";
 import errorRouter from "./routes/error.js";
+import setLocals from "./config/locals.js";
+import path from "path";
+import { fileURLToPath } from "url";
 import { checkDatabase } from "./services/databaseService.js";
 import { ROUTES } from "./config/routes.js";
-import setLocals from "./config/locals.js";
 
 const PORT = process.env.PORT;
 const app = express();
@@ -29,14 +30,30 @@ app.set("views", path.join(__dirname, "views"));
 setLocals(app);
 
 // Middlewares
+app.use(
+  // Add secure headers
+  helmet({
+    contentSecurityPolicy: false,
+  }),
+);
+app.use(compression()); // Compresses files
+
+// Monitoring HTTP requests
+app.use(morgan("dev"));
+
+// Parse Body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan("dev")); // Monitoring HTTP requests
-// Add compression
-app.use(compression());
-app.use(express.static(path.join(__dirname, "public"), { maxAge: "30d" })); // Cache public folder
-// Add method-override
+
+// Implement method-override
 app.use(methodOverride("_method"));
+
+// Cache public folder
+app.use(
+  express.static(path.join(__dirname, "public"), {
+    maxAge: "30d",
+  }),
+);
 
 // Handle homepage route
 app.use("/", pageRouter);
