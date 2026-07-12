@@ -4,6 +4,7 @@ import morgan from "morgan";
 import methodOverride from "method-override";
 import path from "path";
 import { fileURLToPath } from "url";
+import compression from "compression";
 import pageRouter from "./routes/page.js";
 import taskRouter from "./routes/tasks.js";
 import errorRouter from "./routes/error.js";
@@ -34,6 +35,8 @@ app.use(morgan("dev")); // Monitoring HTTP requests
 app.use(express.static(path.join(__dirname, "public")));
 // Add method-override
 app.use(methodOverride("_method"));
+// Add compression
+app.use(compression());
 
 // Handle homepage route
 app.use("/", pageRouter);
