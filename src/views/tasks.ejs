@@ -43,6 +43,7 @@
                     strokeWidth="{1.5}"
                     stroke="currentColor"
                     className="size-6"
+                    class="svg-h-500"
                     >
                     <path
                         strokeLinecap="round"
@@ -68,9 +69,6 @@
                     <line x1="12" y1="8" x2="12.01" y2="8"></line>
             </svg>
             </div>
-                <%- include("partials/taskButton", {
-                    mode: BUTTON_LABELS.create,
-                }) %>
         <% } else { %>
             <% tasks.forEach(task => { %>
                 <%- include("partials/task", { task }) %>
