@@ -1,0 +1,59 @@
+<%- include('partials/header', { 
+  pageTitle: "404 - Page Not Found" 
+}) %>
+
+<%- include('partials/alert') %>
+
+<section class="error">
+  <div class="container fluid-container">
+    <span class="dot-badge surface-bg"><span class="dot danger-dot"></span>HTTP 404</span>
+    <h2 class="glowing-heading">Task</h2>
+
+    <div class="card field-card">
+      <h3>Find Page</h3>
+      <div class="field-body">
+        <div class="field">
+          <span class="field-name">Status</span>
+
+          <span class="icon-text status status-error field-value">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="bi bi-x-circle-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"
+              />
+            </svg>
+            Not Found
+          </span>
+        </div>
+
+        <p class="sub-text-lg fs-200">
+          The page you're looking for doesn't exist or may have been moved.
+        </p>
+
+        <div class="btn-group center mt-lg">
+          <a
+            class="btn btn-gradient btn-lg btn-primary"
+            href="<%= ROUTES.HOME %>"
+          >
+            Return Home
+          </a>
+
+          <a
+            class="btn btn-gradient btn-lg btn-secondary"
+            href="<%= ROUTES.TASKS %>"
+          >
+            Open Tasks
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer", {
+  scriptPaths: ["/js/pages/alert.js"]
+}) %>

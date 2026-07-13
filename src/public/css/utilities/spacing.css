@@ -1,0 +1,27 @@
+.block-space-lg {
+  padding-block: var(--space-lg);
+}
+
+.block-space-xl {
+  padding-block: var(--space-xl);
+}
+
+.block-space-2xl {
+  padding-block: var(--space-2xl);
+}
+
+.block-space-3xl {
+  padding-block: var(--space-3xl);
+}
+
+.mt-auto {
+  margin-top: auto !important;
+}
+
+.mt-lg {
+  margin-block-start: var(--space-lg) !important;
+}
+
+.pd-btn-sm {
+  padding: 0.25rem 0.5rem !important;
+}

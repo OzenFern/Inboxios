@@ -1,0 +1,36 @@
+.surface-bg {
+  background: var(--surface) !important;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.simple-list {
+  list-style: inside circle;
+}
+
+/* Flowchart */
+
+.flowchart {
+  display: inline-flex;
+  flex-flow: column wrap;
+
+  text-align: center;
+}
+
+.flowchart .step {
+  display: inline-flex;
+  flex-flow: column wrap;
+
+  padding: var(--space-sm);
+
+  color: var(--accent);
+  font-weight: 600;
+
+  font-size: var(--fs-300);
+}
+
+.flowchart .step:not(:last-child)::after {
+  content: "⬇️";
+}

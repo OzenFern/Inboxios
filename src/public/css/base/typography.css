@@ -1,0 +1,132 @@
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-200);
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title {
+  font-family: var(--font-heading);
+  color: inherit;
+
+  text-align: center;
+}
+
+button,
+input,
+textarea,
+select,
+dialog {
+  font: inherit;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: var(--fs-600);
+}
+
+h1,
+.glowing-heading {
+  letter-spacing: 0.2rem;
+
+  background: var(--gradient-heading);
+  background-size: 400% 400%;
+
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  filter: drop-shadow(
+      0 0 8px color-mix(in oklch, var(--lavender) 60%, transparent)
+    )
+    drop-shadow(0 0 20px color-mix(in oklch, var(--mauve) 40%, transparent))
+    drop-shadow(0 0 40px color-mix(in oklch, var(--pink) 25%, transparent));
+  animation:
+    pan-gradient 10s linear infinite,
+    pulse-glow 3s ease-in-out infinite;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: var(--fs-500);
+}
+
+h3 {
+  font-weight: 700;
+  font-size: var(--fs-400);
+}
+
+h4 {
+  font-weight: 600;
+  font-size: var(--fs-300);
+}
+
+h5 {
+  font-weight: 600;
+  font-size: var(--fs-200);
+}
+
+h6 {
+  font-weight: 600;
+  font-size: var(--fs-100);
+}
+
+.navbar a,
+.btn {
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.6;
+}
+
+strong {
+  color: var(--accent);
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.sub-text-lg {
+  font-size: var(--fs-400);
+  color: var(--text-secondary);
+}
+
+.fs-100 {
+  font-size: var(--fs-100) !important;
+}
+
+.fs-200 {
+  font-size: var(--fs-200) !important;
+}
+
+.fs-300 {
+  font-size: var(--fs-300) !important;
+}
+
+.fs-400 {
+  font-size: var(--fs-400) !important;
+}
+
+.fs-500 {
+  font-size: var(--fs-500) !important;
+}
+
+.fs-600 {
+  font-size: var(--fs-600) !important;
+}
+
+.highlight {
+  color: var(--sky);
+}
+
+.dark-txt {
+  color: var(--crust) !important;
+}

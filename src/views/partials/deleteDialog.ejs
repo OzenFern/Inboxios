@@ -1,0 +1,29 @@
+<dialog id="delete-dialog" class="dialog">
+  <form id="delete-form" class="container" method="post">
+    <h2 class="mt-lg">Delete Task</h2>
+
+    <p>
+      Are you sure you want to delete<br />
+      <strong id="delete-task-title"
+        ><!-- Task title added by JavaScript --></strong
+      >?
+    </p>
+
+    <p class="muted">This action cannot be undone.</p>
+
+    <div class="btn-group block-space-lg">
+      <button
+        class="btn btn-warning"
+        type="button"
+        command="close"
+        commandfor="delete-dialog"
+      >
+        Cancel
+      </button>
+
+      <button type="submit" class="btn btn-danger-fill" id="confirm-delete">
+        Delete
+      </button>
+    </div>
+  </form>
+</dialog>

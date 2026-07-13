@@ -1,0 +1,16 @@
+blockquote .quote-text {
+  color: var(--text-secondary);
+
+  font-style: oblique;
+  font-weight: 600;
+}
+
+blockquote .quote-text::before {
+  content: "\201C";
+  margin-inline-start: var(--space-xs);
+}
+
+blockquote .quote-text::after {
+  content: "\201D";
+  margin-inline-end: var(--space-xs);
+}
