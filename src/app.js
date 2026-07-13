@@ -1,10 +1,15 @@
 import "dotenv/config";
 import express from "express";
 import morgan from "morgan";
-import path from "path";
-import { fileURLToPath } from "url";
+import methodOverride from "method-override";
+import helmet from "helmet";
+import compression from "compression";
 import pageRouter from "./routes/page.js";
 import taskRouter from "./routes/tasks.js";
+import errorRouter from "./routes/error.js";
+import setLocals from "./config/locals.js";
+import path from "path";
+import { fileURLToPath } from "url";
 import { checkDatabase } from "./services/databaseService.js";
 import { ROUTES } from "./config/routes.js";
 
@@ -21,16 +26,41 @@ const __dirname = path.dirname(__filename);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+// Global EJS variables
+setLocals(app);
+
 // Middlewares
+app.use(
+  // Add secure headers
+  helmet({
+    contentSecurityPolicy: false,
+  }),
+);
+app.use(compression()); // Compresses files
+
+// Monitoring HTTP requests
+app.use(morgan("dev"));
+
+// Parse Body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan("dev")); // Monitoring HTTP requests
-app.use(express.static(path.join(__dirname, "public")));
+
+// Implement method-override
+app.use(methodOverride("_method"));
+
+// Cache public folder
+app.use(
+  express.static(path.join(__dirname, "public"), {
+    maxAge: "30d",
+  }),
+);
 
 // Handle homepage route
 app.use("/", pageRouter);
 // Handle all routes for tasks
 app.use(ROUTES.TASKS, taskRouter);
+// Handle routes to show errors on purpose
+app.use(ROUTES.ERROR, errorRouter);
 
 // Handles invalid routes
 app.use((req, res) => {

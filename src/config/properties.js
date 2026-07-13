@@ -4,3 +4,5 @@ export const PROPERTIES = {
   DUE: "Due",
   CREATED: "Created",
 };
+
+export const STATUS = ["To Do", "Doing", "Done"];

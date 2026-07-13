@@ -1,0 +1,51 @@
+<dialog id="task-dialog" data-mode="<%= BUTTON_LABELS.edit %>">
+  <form id="task-form" class="container sm-container" method="post">
+    <h2 id="task-dialog-title" class="mt-lg"><%= BUTTON_LABELS.edit %></h2>
+
+    <div class="field">
+      <label for="title" class="field-name"> <%- include("taskLogo") %> Title </label>
+
+      <input id="title" class="field-value dark-txt" name="title" type="text" placeholder="New Task" required />
+    </div>
+
+    <div class="field">
+      <label for="status" class="field-name"> Status </label>
+        <select class="dropdown status-filter pd-btn-sm"
+            id="status"
+            name="status">
+              <button>
+                <selectedcontent></selectedcontent>
+              </button>
+            <% STATUS.forEach(status => { %>
+                <option value="<%= status %>">
+                    <%= status %>
+                </option>
+            <% }) %>
+        </select>
+    </div>
+
+    <fieldset>
+      <legend class="highlight">Due Date</legend>
+
+      <div class="field">
+        <label for="startDate" class="field-name"> Start </label>
+
+        <input id="startDate" name="startDate" type="datetime-local"  class="field-value dark-txt" />
+      </div>
+
+      <div class="field">
+        <label for="endDate" class="field-name"> End </label>
+
+        <input id="endDate" name="endDate" type="datetime-local" class="field-value dark-txt" />
+      </div>
+    </fieldset>
+
+    <div class="btn-group block-space-lg">
+      <button class="btn btn-warning" type="button" command="close" commandfor="task-dialog">
+        Cancel
+      </button>
+
+      <button class="btn btn-confirm" id="task-submit" type="submit"><%= BUTTON_LABELS.edit %></button>
+    </div>
+  </form>
+</dialog>

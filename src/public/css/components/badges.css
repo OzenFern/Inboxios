@@ -1,0 +1,152 @@
+.badge-list {
+  display: flex;
+  place-content: center;
+  place-items: center;
+
+  flex-flow: row wrap;
+  gap: clamp(2rem, 2vw + 0.5rem, 3rem);
+}
+
+.badge-list .item {
+  color: var(--text-secondary);
+  text-align: center;
+
+  background: transparent;
+  backdrop-filter: blur(20px);
+
+  box-shadow: 1px 3px 5px var(--shadow-color);
+
+  position: relative;
+
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: 999px;
+
+  /* border: 1px solid var(--border); */
+  border: 1px solid color-mix(in oklch, var(--border) 70%, white);
+  background: transparent;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.6s ease-in-out,
+    box-shadow 0.6s ease-in-out;
+}
+
+.badge-list .item:hover {
+  box-shadow: 1px 3px 5px 2px var(--shadow-color);
+  transform: scale(1.1) translateY(-2px);
+}
+
+.badge-list .item::before {
+  content: "";
+
+  width: 100%;
+  height: var(--space-md);
+
+  top: 50%;
+  left: 50%;
+  position: absolute;
+
+  filter: blur(2px);
+  transform: translate(-50%, -50%) rotate(0deg);
+
+  z-index: -2;
+  opacity: 0;
+
+  transition: opacity 0.3s;
+}
+
+.badge-list .item::after {
+  content: "";
+
+  position: absolute;
+  inset: 3px;
+
+  background: var(--gradient-badge);
+  border-radius: 900px;
+
+  z-index: -1;
+  opacity: 0;
+}
+
+.badge-list .item:hover::before {
+  opacity: 1;
+  background: conic-gradient(
+    var(--mauve),
+    var(--pink),
+    var(--rosewater),
+    var(--lavender),
+    var(--mauve)
+  );
+
+  animation: rotate-border 5s linear infinite;
+}
+
+.badge-list .item:hover::after {
+  opacity: 1;
+}
+
+.badge-list .term {
+  font-weight: 600;
+  color: var(--lavender);
+}
+
+.badge-list .description {
+  color: var(--text-muted);
+}
+
+/* Dot Badge Styles */
+
+.dot-badge {
+  display: inline-flex;
+  gap: var(--space-sm);
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  background: color-mix(in oklch, var(--accent) 8%, transparent);
+
+  border: 1px solid var(--border-hover);
+  box-shadow: 2px 4px 5px var(--shadow-color-strong);
+  border-radius: 999px;
+
+  padding: 0.2rem 0.5rem;
+  z-index: 0;
+}
+
+.dot-badge .dot {
+  position: relative;
+
+  width: 0.6rem;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+}
+
+.dot-badge .dot::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+  background: inherit;
+
+  animation: pulse-dot 2s infinite;
+}
+
+.success-dot {
+  background: var(--success);
+  box-shadow: 0 0 8px var(--success);
+}
+
+.warning-dot {
+  background-color: var(--warning);
+  box-shadow: 0 0 8px var(--warning);
+}
+
+.danger-dot {
+  background-color: var(--danger);
+  box-shadow: 0 0 8px var(--danger);
+}

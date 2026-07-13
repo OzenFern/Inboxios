@@ -1,0 +1,45 @@
+:root {
+  /* Navbar */
+  --navbar-height: 5rem;
+  --navbar-logo-height: 2rem;
+  --side-drawer-width: clamp(11rem, 40vw + 1rem, 13rem);
+
+  /* Fonts */
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+
+  /* Font sizes */
+  --fs-100: clamp(0.875rem, 0.8rem + 0.2vw, 1rem);
+  --fs-200: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+  --fs-300: clamp(1.25rem, 1rem + 0.6vw, 1.5rem);
+  --fs-400: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  --fs-500: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --fs-600: clamp(2.5rem, 2rem + 3vw, 4rem);
+
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 2rem;
+  --radius-2xl: 3rem;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 5rem;
+
+  /* Z-index */
+  --z-dropdown: 100;
+  --z-navbar: 900;
+  --z-overlay: 800;
+  --z-hamburger: 1000;
+  --z-dialog: 1500;
+  --z-tooltip: 2000;
+
+  /* Transition */
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}

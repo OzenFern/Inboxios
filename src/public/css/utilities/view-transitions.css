@@ -1,0 +1,16 @@
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  background: var(--background);
+}
+
+::view-transition-old(root) {
+  animation: old-page 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+::view-transition-new(root) {
+  animation: new-page 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+}
